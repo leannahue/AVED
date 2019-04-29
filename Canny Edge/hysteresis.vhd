@@ -52,9 +52,7 @@ architecture behavior of hysteresis is
 		variable all_zeros			: std_logic_vector (MAG_WIDTH - 1 downto 0) := (others => '0');
 		constant HIGH_THRESHOLD 	: integer:= 48;
 		constant LOW_THRESHOLD 		: integer:= 12;  
-		
 	begin
-		
 		-- in_data[y*width + x] = img_current_mag
 		-- in_data[y*width + x - 1] = img_left_mag
 		-- in_data[y*width + x + 1] = img_right_mag
@@ -191,7 +189,7 @@ begin
     clock_process : process( clock, reset ) is
     begin
         if ( reset = '1' ) then
-            state <= s0;
+            state <= s0; 
             x <= 0;
             y <= 0;
             shift_reg <= (others => (others => '0'));            
@@ -201,6 +199,6 @@ begin
             y <= y_c;
             shift_reg <= shift_reg_c;
         end if;
-    end process clock_process;	 
+    end process clock_process;	
 	
 end architecture behavior;
