@@ -201,6 +201,6 @@ begin
             y <= y_c;
             shift_reg <= shift_reg_c;
         end if;
-    end process clock_process;	
+    end process clock_process;	 
 	
 end architecture behavior;
