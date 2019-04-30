@@ -2,12 +2,13 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.MATH_REAL.ALL;
+use work.constants.all;
 
 entity Gaussian is
 generic
 (
-	constant WIDTH_P     : integer:= 9;
-	constant HEIGHT      : integer:= 9
+	constant WIDTH_P     : integer:= IMG_WIDTH+4;
+	constant HEIGHT      : integer:= IMG_HEIGHT+4
 	--constant WIDTH_P     : integer:= 724;
 	--constant HEIGHT      : integer:= 544
 );

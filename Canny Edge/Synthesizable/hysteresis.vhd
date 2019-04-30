@@ -6,8 +6,8 @@ use work.constants.all;
 entity hysteresis is
 generic
 (
-	constant WIDTH      : integer:= 720;
-	constant HEIGHT     : integer:= 540
+	constant WIDTH      : integer:= IMG_WIDTH;
+	constant HEIGHT     : integer:= IMG_HEIGHT
 );
 port
 (

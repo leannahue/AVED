@@ -6,8 +6,8 @@ use work.constants.all;
 entity AVED_top is
 generic
 (
-    constant WIDTH   : integer:= 720;
-    constant HEIGHT  : integer:= 540
+    constant WIDTH   : integer:= IMG_WIDTH;
+    constant HEIGHT  : integer:= IMG_HEIGHT
 );
 port
 (
@@ -134,8 +134,8 @@ begin
 	gauss_inst : component Gaussian
 	generic map
 	( 
-		WIDTH_P		=> 724,
-		HEIGHT		=> 544
+		WIDTH_P		=> IMG_WIDTH+4,
+		HEIGHT		=> IMG_WIDTH+4
 	)
 	port map
 	(
@@ -171,8 +171,8 @@ begin
 	sobel_inst : component sobel
 	generic map
 	( 
-		WIDTH		=> 720,
-		HEIGHT		=> 540
+		WIDTH		=> IMG_WIDTH,
+		HEIGHT		=> IMG_HEIGHT
 	)
 	port map
 	(

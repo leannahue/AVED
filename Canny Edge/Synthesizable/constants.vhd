@@ -9,7 +9,7 @@ package constants is
 	--constant IMG_WIDTH	: natural := 480;
 	--constant IMG_HEIGHT	: natural := 480;
 	constant IMG_WIDTH	: natural := 720;
-	constant IMG_HEIGHT	: natural := 540;
+	constant IMG_HEIGHT	: natural := 720;
 	constant MAG_WIDTH	: natural := 8;
 
 	constant FIFO_D_WIDTH	: natural := 8;
