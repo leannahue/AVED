@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.constants.all;
 
-entity nms_w_fifo is
+entity gs_w_fifo is
 generic
 (
     constant WIDTH   : integer:= 720;
@@ -20,10 +20,10 @@ port
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
 );
-end entity nms_w_fifo;
+end entity gs_w_fifo;
 
 
-architecture behavior of nms_w_fifo is 
+architecture behavior of gs_w_fifo is
 
     -- configure the grayscale architecture
     for all : grayscale use entity work.grayscale(combinational);
