@@ -13,6 +13,8 @@ package constants is
 	constant FIFO_D_WIDTH	: natural := 8;
 	constant FIFO_BUFF_SIZE	: natural := 256;
 
+	constant BMP_HEADER_CNT : natural := 60;
+
 component fifo is
 generic
 (
