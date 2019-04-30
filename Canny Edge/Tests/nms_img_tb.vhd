@@ -1,230 +1,297 @@
-library ieee;
-use ieee.std_logic_1164.all;
-use ieee.std_logic_arith.all;
-
+library IEEE;
+use IEEE.std_logic_1164.all;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_textio.all;
+use STD.textio.all;
 use work.constants.all;
-use ieee.std_logic_textio.all;
-use std.textio.all;
-use ieee.numeric_std.all;
-use ieee.math_real.all;
 
 entity nms_img_tb is
+generic
+(
+    constant IMG_IN_NAME  : string (16 downto 1)  := "stage2_sobel.bmp";
+    constant IMG_OUT_NAME : string (14 downto 1) := "nms_output.bmp";
+    constant COMPARE_NAME : string (29 downto 1) := "stage3_nonmax_suppression.bmp";
+    constant CLOCK_PERIOD : time := 10 ns
+);
+end entity nms_img_tb;
 
-end nms_img_tb;
 
+architecture behavior of nms_img_tb is
 
-architecture tb of nms_img_tb is
+component nms_w_fifo is
+generic
+(
+    constant WIDTH   : integer:= 720;
+    constant HEIGHT  : integer:= 540
+);
+port
+(
+	signal clock     : in std_logic;
+	signal reset     : in std_logic;
+	signal in_full   : out std_logic;
+	signal in_wr_en  : in std_logic;
+	signal in_din    : in std_logic_vector (7 downto 0);
+	signal out_rd_en : in std_logic;
+	signal out_empty : out std_logic;
+	signal out_dout  : out std_logic_vector (7 downto 0)
+);
+end component nms_w_fifo;
 
-	constant IM_SIZE	: integer := IMG_WIDTH*IMG_HEIGHT;
+    function to_slv(c : character) return std_logic_vector is
+    begin
+        return std_logic_vector(to_unsigned(character'pos(c),8));
+    end function to_slv;
 
-	signal clock		: std_logic;
-	signal reset		: std_logic;
-	signal clock_div3	: std_logic;
-	signal div_cnt	        : integer;
+    function to_char(v : std_logic_vector) return character is
+    begin
+        return character'val(to_integer(unsigned(v)));
+    end function to_char;
 
-	-- Outputs from NMS
-	signal Gmag_ready	: std_logic;
-	signal Gmag_in		: std_logic_vector (MAG_WIDTH - 1 downto 0);
+    type raw_file is file of character;
 
-	-- Hysteresis outputs
-	signal	hyst_ready	: std_logic;
-	signal	hyst_pixel	: std_logic_vector (MAG_WIDTH - 1 downto 0);
+    signal clock : std_logic := '1';
+    signal reset : std_logic := '0';
+    signal start : std_logic := '0';
+    signal done : std_logic := '0';
 
-	-- Input Image
-	type t_char_file is file of character;
-	type t_byte_arr is array (natural range <>) of bit_vector(7 downto 0);
-        type t_char_arr is array (1079 downto 0) of character;
-	file Gmag_in_file	: t_char_file open read_mode is "./stage2_sobel.bmp";
-	file hyst_exp_file	: t_char_file open read_mode is "./stage3_nonmax_suppression.bmp";
+	signal in_full : std_logic;
+	signal in_wr_en : std_logic;
+	signal in_din: std_logic_vector (23 downto 0);
+	signal out_rd_en : std_logic;
+	signal out_empty : std_logic;
+	signal out_dout: std_logic_vector (7 downto 0);
 
-	file fp_hyst_out	: text open write_mode is "hyst.out";
-	file fp_hyst_bmp	: t_char_file open write_mode is "nms_output.bmp";
-
-	signal hyst_rd_en   	: std_logic;
-
-	signal pixel_count	: integer := 0;
-	signal hyst_count	: integer := 0;
-
-	-- BMP signals
-	signal bmp_not_ready	: std_logic;
-	signal bmp_not_ready_d1	: std_logic;
-	signal bmp_header_count	: integer;
-	signal bmp_header	: character;
-	signal bmp_header_array	: t_char_arr;
-	signal bmp_header_int	: integer;
-
-	-- Hysteresis outputs
-	signal hyst_exp_int	: integer;
-	signal hyst_int_d1	: integer;
-	signal hyst_err_cnt	: integer;
-
-	signal hyst_done	: std_logic;
+    signal hold_clock : std_logic := '0';
+    signal in_write_done : std_logic := '0';
+    signal out_read_done : std_logic := '0';
+    signal out_errors : integer := 0;
 
 begin
 
-	reset_init : process
-	begin
-		reset <= '1';
-		for i in 0 to 10 loop
-			wait until rising_edge(clock);
+    edge_detect_inst : component nms_w_fifo
+    generic map
+    (
+        WIDTH       => 720,
+        HEIGHT      => 540
+    )
+    port map
+    (
+        clock       => clock,
+        reset       => reset,
+        in_full     => in_full,
+        in_wr_en    => in_wr_en,
+		in_din      => in_din (7 downto 0),
+        out_rd_en   => out_rd_en,
+		out_empty   => out_empty,
+        out_dout    => out_dout
+    );
+
+    clock_process : process
+    begin
+        clock <= '1';
+        wait for  (CLOCK_PERIOD / 2);
+        clock <= '0';
+        wait for  (CLOCK_PERIOD / 2);
+        if ( hold_clock = '1' ) then
+            wait;
+        end if;
+    end process clock_process;
+
+
+    reset_process : process
+    begin
+        reset <= '0';
+        wait until  (clock = '0');
+        wait until  (clock = '1');
+        reset <= '1';
+        wait until  (clock = '0');
+        wait until  (clock = '1');
+        reset <= '0';
+        wait;
+    end process reset_process;
+
+
+    tb_process : process
+        variable errors : integer := 0;
+        variable warnings : integer := 0;
+        variable start_time : time;
+        variable end_time : time;
+        variable ln1, ln2, ln3, ln4 : line;
+    begin
+        wait until  (reset = '1');
+        wait until  (reset = '0');
+
+        wait until  (clock = '0');
+        wait until  (clock = '1');
+
+        start_time := NOW;
+        write( ln1, string'("@ ") );
+        write( ln1, start_time );
+        write( ln1, string'(": Beginning simulation...") );
+        writeline( output, ln1 );
+
+        start <= '1';
+        wait until  (clock = '0');
+        wait until  (clock = '1');
+        start <= '0';
+        wait until  (out_read_done = '1');
+
+        end_time := NOW;
+        write( ln2, string'("@ ") );
+        write( ln2, end_time );
+        write( ln2, string'(": Simulation completed.") );
+        writeline( output, ln2 );
+
+        errors := out_errors;
+
+        write( ln3, string'("Total simulation cycle count: ") );
+        write( ln3, (end_time - start_time) / CLOCK_PERIOD );
+        writeline( output, ln3 );
+        write( ln4, string'("Total error count: ") );
+        write( ln4, errors );
+        writeline( output, ln4 );
+
+        hold_clock <= '1';
+        wait;
+    end process tb_process;
+
+
+    img_read_process : process
+        file in_file : raw_file;
+        variable char1, char2, char3 : character;
+        variable ln1 : line;
+        variable i : integer := 0;
+    begin
+        wait until  (reset = '1');
+        wait until  (reset = '0');
+
+        write( ln1, string'("@ ") );
+        write( ln1, NOW );
+        write( ln1, string'(": Loading file ") );
+        write( ln1, IMG_IN_NAME );
+        write( ln1, string'("...") );
+        writeline( output, ln1 );
+
+        file_open( in_file, IMG_IN_NAME, read_mode );
+		in_wr_en <= '0';
+
+        -- read header
+		while ( not ENDFILE( in_file) and i < 54 ) loop
+            read( in_file, char1 );
+            i := i + 1;
+        end loop;
+
+		while ( not ENDFILE( in_file) ) loop
+			wait until (clock = '1');
+			wait until (clock = '0');
+			if ( in_full = '0' ) then
+				read( in_file, char1 );
+				read( in_file, char2 );
+				read( in_file, char3 );
+				in_din <= to_slv( char3 ) & to_slv( char2 ) & to_slv( char1 );
+				in_wr_en <= '1';
+			else
+				in_wr_en <= '0';
+			end if;
 		end loop;
-		reset <= '0';
-		wait;
-	end process;
 
-	clock_gen : process
-	begin
-		clock <= transport '1';
-		wait for 10 ns;
-		clock <= transport '0';
-		wait for 10 ns;
-	end process clock_gen;
+		wait until (clock = '1');
+		wait until (clock = '0');
+		in_wr_en <= '0';
+        file_close( in_file );
+        in_write_done <= '1';
+        wait;
+    end process img_read_process;
 
-	clk_div3 : process(clock,reset)
-	begin
-		if (reset = '1') then
-			clock_div3 <= '0';
-			div_cnt    <= 0;
-		elsif (rising_edge(clock)) then
-			if (div_cnt = 2) then
-				div_cnt    <= 0;
-				clock_div3 <= '0';
-			else
-				div_cnt <= div_cnt+1;
-				clock_div3 <= '1';
-			end if;
-		end if;
-	end process clk_div3;
 
-	-- BMP file : 720x720x3 (data is repeated 3 times)
-	-- Input
- 	gen_vec: process(clock,reset) is
-		variable char_buf	: character;
-		variable my_line	: line;
-		variable Gmag_in_int	: integer;
-		variable gmag_in_eof	: integer := 0;
-	begin
-	if (reset = '1') then
-  		Gmag_in <= (others => '0');
-		bmp_not_ready  <= '1';
-		bmp_not_ready_d1 <= '1';
-		bmp_header_count <= 0;
-		bmp_header <= 'A';
-		bmp_header_int <= 0;
-	elsif (falling_edge(clock)) then
-		if (not endfile(Gmag_in_file)) then
-			bmp_not_ready_d1 <= bmp_not_ready;
-			read(Gmag_in_file,char_buf);
-			if (Gmag_ready = '0') then
-				bmp_header <= char_buf;
-				bmp_header_int <= character'pos(bmp_header);  -- character to integer conversion
-				bmp_header_array(bmp_header_count) <= char_buf;
-				if (bmp_header_count = (BMP_HEADER_CNT - 6)) then  -- lineup
-					bmp_not_ready <= '0';
-				else
-					bmp_not_ready <= '1';
-					bmp_header_count <= bmp_header_count + 1;
+
+    img_write_process : process
+        file cmp_file : raw_file;
+        file out_file : raw_file;
+        variable char : character;
+        variable ln1, ln2, ln3 : line;
+        variable i : integer := 0;
+        variable out_data_read : std_logic_vector (7 downto 0);
+        variable out_data_cmp : std_logic_vector (7 downto 0);
+    begin
+        wait until  (reset = '1');
+        wait until  (reset = '0');
+
+        wait until  (clock = '1');
+        wait until  (clock = '0');
+
+        write( ln1, string'("@ ") );
+        write( ln1, NOW );
+        write( ln1, string'(": Comparing file ") );
+        write( ln1, IMG_OUT_NAME );
+        write( ln1, string'("...") );
+        writeline( output, ln1 );
+
+        file_open( out_file, IMG_OUT_NAME, write_mode);
+        file_open( cmp_file, COMPARE_NAME, read_mode );
+		out_rd_en <= '0';
+
+		while ( not ENDFILE(cmp_file) and i < 54 ) loop
+            read( cmp_file, char );
+            write( out_file, char);
+            i := i + 1;
+        end loop;
+
+        i := 0;
+
+		while ( not ENDFILE(cmp_file) ) loop
+			wait until ( clock = '1');
+			wait until ( clock = '0');
+			if ( out_empty = '0' ) then
+				out_rd_en <= '1';
+				read( cmp_file, char );
+				read( cmp_file, char );
+				read( cmp_file, char );
+				out_data_cmp := to_slv(char);
+                write(out_file, to_char(out_dout));
+                write(out_file, to_char(out_dout));
+                write(out_file, to_char(out_dout));
+
+                -- write( ln3, string'("@ ") );
+                -- write( ln3, NOW );
+                -- write( ln3, string'(": ") );
+                -- write( ln3, i );
+                -- write( ln3, string'(": ") );
+                -- hwrite( ln3, out_dout );
+                -- writeline( output, ln3 );
+
+				if ( to_01(unsigned(out_dout)) /= to_01(unsigned(out_data_cmp)) ) then
+					out_errors <= out_errors + 1;
+					write( ln2, string'("@ ") );
+					write( ln2, NOW );
+					write( ln2, string'(": ") );
+					write( ln2, IMG_OUT_NAME );
+					write( ln2, string'("(") );
+					write( ln2, i + 1 );
+					write( ln2, string'("): ERROR: ") );
+					hwrite( ln2, out_dout );
+					write( ln2, string'(" != ") );
+					hwrite( ln2, out_data_cmp );
+					write( ln2, string'(" at address 0x") );
+					hwrite( ln2, std_logic_vector(to_unsigned(i,32)) );
+					write( ln2, string'(".") );
+					writeline( output, ln2 );
+                    exit;
 				end if;
+                i := i + 1;
 			else
-				Gmag_in_int := character'pos(char_buf);  -- character to integer conversion
-				Gmag_in <= conv_std_logic_vector(Gmag_in_int, MAG_WIDTH);
-				pixel_count <= pixel_count + 1;
-			end if; -- Gmag_ready
-		else
-			if (gmag_in_eof = 0) then
-				write(my_line, string'(" ... End of Input File ... "));
-				writeline(output, my_line);  -- write to stdout
-				gmag_in_eof := 1;
+				out_rd_en <= '0';
 			end if;
-		end if; -- end of file
-	end if; -- clock edge
-	end process;
+        end loop;
 
-	-- Instantiations
-	nms_inst : non_maximum_suppression
-		port map (
-			clock		=> clock_div3,
-			reset		=> reset,
-			in_rd_en	=> Gmag_ready,
-			in_empty	=> bmp_not_ready,
-			in_dout		=> Gmag_in,
-			out_wr_en	=> hyst_ready,
-			out_full	=> '0',
-			out_din		=> hyst_pixel
-			);
+		wait until (clock = '1');
+		wait until (clock = '0');
+		out_rd_en <= '0';
+        file_close( cmp_file );
+        file_close( out_file );
+        out_read_done <= '1';
+        wait;
+    end process img_write_process;
 
-	-- Outputs
-	canny_output : process(clock,reset)
-		variable hyst_line	: line;
-		variable hyst_line2	: line;
-		variable hyst_int	: integer;
-		variable hyst_char	: character;
-		variable wait_cnt	: integer := 0; 
-		variable hyst_exp_char  : character;
-		variable hyst_bmp_eof	: integer := 0;
-	begin
-		if (reset = '1') then
-			wait_cnt := wait_cnt  + 1;
-			hyst_exp_int <= 0;
-			hyst_err_cnt <= 0;
-			hyst_int_d1 <= 0;
-			hyst_done <= '0';
-		elsif (rising_edge(clock)) then
-			if (Gmag_ready = '0') and (hyst_count < 100) then
-				write(fp_hyst_bmp, bmp_header);
-				read(hyst_exp_file, hyst_exp_char);  -- remove the headers of hysterisis output
-			end if;
 
-			if (hyst_ready = '1')then
-				hyst_int := conv_integer(ieee.std_logic_arith.unsigned(hyst_pixel));
-                                hyst_char := character'val(hyst_int);
-                                if (not endfile(hyst_exp_file)) then
-                                  read(hyst_exp_file, hyst_exp_char);   -- read hysterisis output
-	                          hyst_exp_int  <= character'pos(hyst_exp_char);  -- character to integer conversion
-                                  hyst_int_d1  <= hyst_int;
-
-                                  -- Compare
-                                  if (hyst_int_d1 /= hyst_exp_int) then
-                                    write(hyst_line2, string'("... Non maximum suppression ERROR : Expected = "));
-                                    write(hyst_line2, hyst_exp_int);
-                                    write(hyst_line2, string'("... Actual = "));
-                                    write(hyst_line2, hyst_int_d1);
-                                    write(hyst_line2, string'("... nms_count = "));
-                                    write(hyst_line2, hyst_count);
-                                    writeline(output, hyst_line2);
-                                    hyst_err_cnt  <= hyst_err_cnt + 1;
-                                  end if;
-                                else
-                                   if (hyst_bmp_eof = 0) then
- 		                       write(hyst_line2, string'(" ... non maximum suppression end of compare file. Compare done ... "));
- 		                       writeline(output, hyst_line2);  -- write to stdout
-                                       hyst_bmp_eof := 1;
-                                   end if;
-                                end if; -- end of compare file
-
-                                if (hyst_count < IM_SIZE*3) then
-				   write(hyst_line, hyst_int);
-				   writeline(fp_hyst_out, hyst_line);
-				   write(fp_hyst_bmp, hyst_char);
-                                   hyst_count    <= hyst_count + 1;
-                                else
-                                  if (hyst_done = '0') then
-                                      file_close(fp_hyst_out);
-					file_close(fp_hyst_bmp);
-                                      hyst_done <= '1';
-                                      if (hyst_err_cnt /= 0) then
-					write(hyst_line2, string'("... NON MAXIMUM SUPPRESSION SIM FAILED: OUTPUTS DO NOT MATCH ..."));
-                                      else
-					write(hyst_line2, string'("... NON MAXIMUM SUPPRESSION SIM PASSED ..."));
-                                      end if;
-                                      writeline(output, hyst_line2);
-					assert false report "... SIMULATION DONE ..." severity failure;
-                                  end if; -- hyst_done
-                                end if;
-
-			end if;         -- hyst_ready
-
-		end if; -- rising_edge clock
-	end process canny_output;
-
-end tb;
+end architecture behavior;

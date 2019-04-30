@@ -9,7 +9,7 @@ entity AVED_tb is
 generic
 (
     constant IMG_IN_NAME  : string (18 downto 1)  := "tracks_720_720.bmp";
-    constant IMG_OUT_NAME : string (10 downto 1) := "output.bmp";
+    constant IMG_OUT_NAME : string (19 downto 1) := "aved_top_output.bmp";
     constant COMPARE_NAME : string (21 downto 1) := "stage4_hysteresis.bmp";
     constant CLOCK_PERIOD : time := 10 ns
 );
@@ -233,13 +233,13 @@ begin
                 write(out_file, to_char(out_dout));
                 write(out_file, to_char(out_dout));
 
-                -- write( ln3, string'("@ ") );
-                -- write( ln3, NOW );
-                -- write( ln3, string'(": ") );
-                -- write( ln3, i );
-                -- write( ln3, string'(": ") );
-                -- hwrite( ln3, out_dout );
-                -- writeline( output, ln3 );
+                write( ln3, string'("@ ") );
+                write( ln3, NOW );
+                write( ln3, string'(": ") );
+                write( ln3, i );
+                write( ln3, string'(": ") );
+                hwrite( ln3, out_dout );
+                writeline( output, ln3 );
                                 
 				if ( to_01(unsigned(out_dout)) /= to_01(unsigned(out_data_cmp)) ) then
 					out_errors <= out_errors + 1;

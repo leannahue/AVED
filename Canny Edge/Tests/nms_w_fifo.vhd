@@ -15,7 +15,7 @@ port
 	signal reset     : in std_logic;
 	signal in_full   : out std_logic;
 	signal in_wr_en  : in std_logic;
-	signal in_din    : in std_logic_vector (23 downto 0);
+	signal in_din    : in std_logic_vector (7 downto 0);
 	signal out_rd_en : in std_logic;
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
@@ -23,13 +23,9 @@ port
 end entity nms_w_fifo;
 
 
-architecture behavior of nms_w_fifo is 
+architecture behavior of nms_w_fifo is
 
-    -- configure the grayscale architecture
-    for all : grayscale use entity work.grayscale(combinational);
-    --for all : grayscale use entity work.grayscale(behavior);
-
-	signal in_dout      : std_logic_vector (23 downto 0);
+	signal in_dout      : std_logic_vector (7 downto 0);
 	signal in_empty     : std_logic;
 	signal in_rd_en     : std_logic;
 
@@ -49,8 +45,8 @@ begin
 	in_inst : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => 24
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH
 	)
 	port map
 	(
@@ -65,7 +61,7 @@ begin
 		empty   => in_empty
 	);
 
-    grayscale_inst : component grayscale
+    nms_inst : component non_maximum_suppression
 	port map
 	(
 		clock       => clock,
@@ -81,8 +77,8 @@ begin
 	out_inst : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => 8
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH
 	)
 	port map
 	(
