@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.canny_constants.all;
+use work.constants.all;
 
 entity non_maximum_suppression is
 	port (
@@ -64,7 +64,7 @@ architecture behavioral of non_maximum_suppression is
 		east_west   := to_integer(unsigned(img_right_mag)) + to_integer(unsigned(img_left_mag)); -- East + West
 		north_west  := to_integer(unsigned(img_nw_mag)) + to_integer(unsigned(img_se_mag)); -- Northwest + SouthEast
 		north_east  := to_integer(unsigned(img_sw_mag)) + to_integer(unsigned(img_ne_mag)); -- Northeast + SouthWest
-	
+
 		if (north_south >= east_west) and (north_south >= north_west) and (north_south >= north_east) then
 			if (img_current_mag > img_left_mag) and (img_current_mag >= img_right_mag) then      -- compare current with west and east
 				return img_current_mag;

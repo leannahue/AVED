@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 
-use work.canny_constants.all;
+use work.constants.all;
 use ieee.std_logic_textio.all;
 use std.textio.all;
 use ieee.numeric_std.all;
@@ -172,7 +172,7 @@ begin
 		variable hyst_line2	: line;
 		variable hyst_int	: integer;
 		variable hyst_char	: character;
-		variable wait_cnt	: integer := 0; 
+		variable wait_cnt	: integer := 0;
 		variable hyst_exp_char  : character;
 		variable hyst_bmp_eof	: integer := 0;
 	begin

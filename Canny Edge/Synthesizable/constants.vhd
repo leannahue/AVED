@@ -6,8 +6,6 @@ use STD.textio.all;
 
 package constants is
 
-	--constant IMG_WIDTH	: natural := 480;
-	--constant IMG_HEIGHT	: natural := 480;
 	constant IMG_WIDTH	: natural := 720;
 	constant IMG_HEIGHT	: natural := 720;
 	constant MAG_WIDTH	: natural := 8;
@@ -35,16 +33,16 @@ port
 );
 end component fifo;
 
-	component grayscale is 
-	port 
+	component grayscale is
+	port
 	(
 		signal clock        : in  std_logic;
 		signal reset        : in  std_logic;
-		signal in_rd_en     : out std_logic; 
-		signal in_empty     : in  std_logic; 
-		signal in_dout      : in  std_logic_vector(23 downto 0); 
-		signal out_wr_en	: out std_logic; 
-		signal out_full     : in  std_logic; 
+		signal in_rd_en     : out std_logic;
+		signal in_empty     : in  std_logic;
+		signal in_dout      : in  std_logic_vector(23 downto 0);
+		signal out_wr_en	: out std_logic;
+		signal out_full     : in  std_logic;
 		signal out_din      : out std_logic_vector(7 downto 0)
 	);
 	end component;
@@ -59,11 +57,11 @@ end component fifo;
 	(
 		signal clock        : in  std_logic;
 		signal reset        : in  std_logic;
-		signal in_rd_en     : out std_logic; 
-		signal in_empty     : in  std_logic; 
-		signal in_dout      : in  std_logic_vector(7 downto 0); 
-		signal out_wr_en	: out std_logic; 
-		signal out_full     : in  std_logic; 
+		signal in_rd_en     : out std_logic;
+		signal in_empty     : in  std_logic;
+		signal in_dout      : in  std_logic_vector(7 downto 0);
+		signal out_wr_en	: out std_logic;
+		signal out_full     : in  std_logic;
 		signal out_din      : out std_logic_vector(7 downto 0)
 	);
 	end component sobel;
@@ -80,11 +78,11 @@ port
 (
 	signal clock         : in  std_logic;
     	signal reset         : in  std_logic;
-	signal in_rd_en      : out std_logic; 
-	signal in_empty      : in  std_logic; 
-	signal in_dout       : in  std_logic_vector(MAG_WIDTH - 1 downto 0); 
-	signal out_wr_en     : out std_logic; 
-	signal out_full      : in  std_logic; 
+	signal in_rd_en      : out std_logic;
+	signal in_empty      : in  std_logic;
+	signal in_dout       : in  std_logic_vector(MAG_WIDTH - 1 downto 0);
+	signal out_wr_en     : out std_logic;
+	signal out_full      : in  std_logic;
 	signal out_din       : out std_logic_vector(MAG_WIDTH - 1 downto 0)
 );
 end component Gaussian;
@@ -112,14 +110,14 @@ port
 (
 	signal clock        : in  std_logic;
     signal reset        : in  std_logic;
-	signal in_rd_en     : out std_logic; 
-	signal in_empty     : in  std_logic; 
-	signal in_dout      : in  std_logic_vector(MAG_WIDTH - 1 downto 0); 
-	signal out_wr_en	: out std_logic; 
-	signal out_full     : in  std_logic; 
+	signal in_rd_en     : out std_logic;
+	signal in_empty     : in  std_logic;
+	signal in_dout      : in  std_logic_vector(MAG_WIDTH - 1 downto 0);
+	signal out_wr_en	: out std_logic;
+	signal out_full     : in  std_logic;
 	signal out_din      : out std_logic_vector(MAG_WIDTH - 1 downto 0)
 );
 end component hysteresis;
 
 
-end package; 
+end package;

@@ -1,7 +1,7 @@
 library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
-use work.constants.all; 
+use work.constants.all;
 
 entity AVED_top is
 generic
@@ -18,59 +18,59 @@ port
 	signal in_din    : in std_logic_vector (23 downto 0);
 	signal out_rd_en : in std_logic;
 	signal out_empty : out std_logic;
-	signal out_dout  : out std_logic_vector (7 downto 0)	
+	signal out_dout  : out std_logic_vector (7 downto 0)
 );
 end entity AVED_top;
 
 
-architecture behavior of AVED_top is 
+architecture behavior of AVED_top is
 
     -- configure the grayscale architecture
     for all : grayscale use entity work.grayscale(combinational);
     -- for all : grayscale use entity work.grayscale(behavior);
-	
-	-- DATAPATH : in_inst -> gs	-> gs_inst -> gaussian_filter -> gaussain_inst -> sobel -> sobel_inst -> threshold -> threshold_inst -> hysteresis -> hysteresis_inst -> out_inst 
-	
+
+	-- DATAPATH : in_inst -> gs	-> gs_inst -> gaussian_filter -> gaussain_inst -> sobel -> sobel_inst -> threshold -> threshold_inst -> hysteresis -> hysteresis_inst -> out_inst
+
 	-- component list --
 	--..
 	--..
 	--------------------
-	
+
 	signal in_dout      : std_logic_vector (23 downto 0);
 	signal in_empty     : std_logic;
 	signal in_rd_en     : std_logic;
     	signal out_din      : std_logic_vector (7 downto 0);
 	signal out_full     : std_logic;
 	signal out_wr_en    : std_logic;
-    
+
 	signal gs_dout      : std_logic_vector (7 downto 0);
 	signal gs_empty     : std_logic;
 	signal gs_rd_en     : std_logic;
 	signal gs_din       : std_logic_vector (7 downto 0);
 	signal gs_full      : std_logic;
 	signal gs_wr_en     : std_logic;
-	
+
 	signal gauss_dout   : std_logic_vector (7 downto 0);
 	signal gauss_empty  : std_logic;
 	signal gauss_rd_en  : std_logic;
 	signal gauss_din    : std_logic_vector (7 downto 0);
 	signal gauss_full   : std_logic;
 	signal gauss_wr_en  : std_logic;
-	
+
 	signal sobel_dout   : std_logic_vector (7 downto 0);
 	signal sobel_empty  : std_logic;
 	signal sobel_rd_en  : std_logic;
 	signal sobel_din    : std_logic_vector (7 downto 0);
 	signal sobel_full   : std_logic;
 	signal sobel_wr_en  : std_logic;
-	
+
 	signal thresh_dout   : std_logic_vector (MAG_WIDTH - 1 downto 0);
 	signal thresh_empty  : std_logic;
 	signal thresh_rd_en  : std_logic;
 	signal thresh_din    : std_logic_vector (7 downto 0);
 	signal thresh_full   : std_logic;
 	signal thresh_wr_en  : std_logic;
-	
+
 	signal hyst_dout   : std_logic_vector (7 downto 0);
 	signal hyst_empty  : std_logic;
 	signal hyst_rd_en  : std_logic;
@@ -83,8 +83,8 @@ begin
 	in_inst : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => 24
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH*3
 	)
 	port map
 	(
@@ -111,12 +111,12 @@ begin
 		out_full    => gs_full,
 		out_wr_en   => gs_wr_en
 	);
-    
+
 	gs_inst : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => 8
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH
 	)
 	port map
 	(
@@ -130,10 +130,10 @@ begin
 		full    => gs_full,
 		empty   => gs_empty
 	);
-	
+
 	gauss_inst : component Gaussian
 	generic map
-	( 
+	(
 		WIDTH_P		=> IMG_WIDTH+4,
 		HEIGHT		=> IMG_WIDTH+4
 	)
@@ -152,8 +152,8 @@ begin
 	gauss_fifo : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,	
-		FIFO_DATA_WIDTH  => 8
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH  => FIFO_D_WIDTH
 	)
 	port map
 	(
@@ -167,10 +167,10 @@ begin
 		full         => gauss_full,
 		empty        => gauss_empty
 	);
-	
+
 	sobel_inst : component sobel
 	generic map
-	( 
+	(
 		WIDTH		=> IMG_WIDTH,
 		HEIGHT		=> IMG_HEIGHT
 	)
@@ -189,8 +189,8 @@ begin
 	sobel_fifo : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => 8
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH
 	)
 	port map
 	(
@@ -217,12 +217,12 @@ begin
 		out_full    => thresh_full,
 		out_wr_en   => thresh_wr_en
 	);
-	
+
 	threshold_fifo : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => MAG_WIDTH
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH
 	)
 	port map
 	(
@@ -258,8 +258,8 @@ begin
 	out_inst : component fifo
 	generic map
 	(
-		FIFO_BUFFER_SIZE => 256,
-		FIFO_DATA_WIDTH => 8
+		FIFO_BUFFER_SIZE => FIFO_BUFF_SIZE,
+		FIFO_DATA_WIDTH => FIFO_D_WIDTH
 	)
 	port map
 	(
@@ -273,5 +273,5 @@ begin
 		full    => out_full,
 		empty   => out_empty
 	);
-	
+
 end architecture behavior;

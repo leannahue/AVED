@@ -4,7 +4,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
 
-use work.canny_constants.all;
+use work.constants.all;
 use ieee.std_logic_textio.all;
 use std.textio.all;
 use ieee.numeric_std.all;
@@ -64,7 +64,7 @@ begin
 		clock <= transport '0';
 		wait for 10 ns;
 	end process clock_gen;
-        
+
  	gen_vec: process(clock,reset) is
 		variable my_line	: line;
 		variable Gmag_in_int	: integer;
