@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.constants.all;
 
-entity nms_w_fifo is
+entity sobel_w_fifo is
 generic
 (
     constant WIDTH   : integer:= IMG_WIDTH;
@@ -20,16 +20,16 @@ port
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
 );
-end entity nms_w_fifo;
+end entity sobel_w_fifo;
 
 
-architecture behavior of nms_w_fifo is
+architecture behavior of sobel_w_fifo is
 
 	signal in_dout      : std_logic_vector (7 downto 0);
 	signal in_empty     : std_logic;
 	signal in_rd_en     : std_logic;
 
-    signal out_din      : std_logic_vector (7 downto 0);
+  signal out_din      : std_logic_vector (7 downto 0);
 	signal out_full     : std_logic;
 	signal out_wr_en    : std_logic;
 
@@ -61,7 +61,7 @@ begin
 		empty   => in_empty
 	);
 
-    nms_inst : component non_maximum_suppression
+  sobel_inst : component sobel
 	port map
 	(
 		clock       => clock,
