@@ -5,20 +5,20 @@ use IEEE.std_logic_textio.all;
 use STD.textio.all;
 use work.constants.all;
 
-entity nms_img_tb is
+entity hyst_img_tb is
 generic
 (
-    constant IMG_IN_NAME  : string (16 downto 1)  := "stage2_sobel.bmp";
-    constant IMG_OUT_NAME : string (14 downto 1) := "nms_output.bmp";
-    constant COMPARE_NAME : string (29 downto 1) := "stage3_nonmax_suppression.bmp";
+    constant IMG_IN_NAME  : string (29 downto 1)  := "stage3_nonmax_suppression.bmp";
+    constant IMG_OUT_NAME : string (15 downto 1) := "hyst_output.bmp";
+    constant COMPARE_NAME : string (21 downto 1) := "stage4_hysteresis.bmp";
     constant CLOCK_PERIOD : time := 10 ns
 );
-end entity nms_img_tb;
+end entity hyst_img_tb;
 
 
-architecture behavior of nms_img_tb is
+architecture behavior of hyst_img_tb is
 
-component nms_w_fifo is
+component hyst_w_fifo is
 generic
 (
     constant WIDTH   : integer:= IMG_WIDTH;
@@ -35,7 +35,7 @@ port
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
 );
-end component nms_w_fifo;
+end component hyst_w_fifo;
 
     function to_slv(c : character) return std_logic_vector is
     begin
@@ -68,7 +68,7 @@ end component nms_w_fifo;
 
 begin
 
-    edge_detect_inst : component nms_w_fifo
+    edge_detect_inst : component hyst_w_fifo
     generic map
     (
         WIDTH       => IMG_WIDTH,
