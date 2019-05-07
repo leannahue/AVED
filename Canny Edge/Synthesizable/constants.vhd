@@ -68,13 +68,11 @@ end component fifo;
 	);
 	end component sobel;
 
-component Gaussian is
+component gaussian is
 generic
 (
-	constant WIDTH_P     : integer:= IMG_WIDTH+4;
-	constant HEIGHT      : integer:= IMG_HEIGHT+4
-	--constant WIDTH_P     : integer:= 724;
-	--constant HEIGHT      : integer:= 544
+	constant WIDTH     	 : integer:= IMG_WIDTH;
+	constant HEIGHT      : integer:= IMG_HEIGHT
 );
 port
 (
@@ -87,7 +85,7 @@ port
 	signal out_full      : in  std_logic;
 	signal out_din       : out std_logic_vector(MAG_WIDTH - 1 downto 0)
 );
-end component Gaussian;
+end component gaussian;
 
 component non_maximum_suppression is
 	port (
@@ -121,7 +119,7 @@ port
 );
 end component hysteresis;
 
-component AVED_top is
+component Canny_Edge_top is
 generic
 (
     constant WIDTH   : integer:= IMG_WIDTH;
@@ -138,7 +136,7 @@ port
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
 );
-end component AVED_top;
+end component Canny_Edge_top;
 
 
 end package;

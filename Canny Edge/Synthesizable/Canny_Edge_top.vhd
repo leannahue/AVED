@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.constants.all;
 
-entity AVED_top is
+entity Canny_Edge_top is
 generic
 (
     constant WIDTH   : integer:= IMG_WIDTH;
@@ -20,10 +20,10 @@ port
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
 );
-end entity AVED_top;
+end entity Canny_Edge_top;
 
 
-architecture behavior of AVED_top is
+architecture behavior of Canny_Edge_top is
 
     -- configure the grayscale architecture
     for all : grayscale use entity work.grayscale(combinational);
@@ -131,11 +131,11 @@ begin
 		empty   => gs_empty
 	);
 
-	gauss_inst : component Gaussian
+	gauss_inst : component gaussian
 	generic map
 	(
-		WIDTH_P		=> IMG_WIDTH+4,
-		HEIGHT		=> IMG_WIDTH+4
+		WIDTH		=> IMG_WIDTH,
+		HEIGHT		=> IMG_WIDTH
 	)
 	port map
 	(

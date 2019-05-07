@@ -3,38 +3,38 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_textio.all;
 use STD.textio.all;
-use work.constants.all; 
+use work.constants.all;
 
-entity AVED_tb is
+entity Canny_Edge_tb is
 generic
 (
     constant IMG_IN_NAME  : string (18 downto 1)  := "tracks_720_720.bmp";
-    constant IMG_OUT_NAME : string (19 downto 1) := "aved_top_output.bmp";
+    constant IMG_OUT_NAME : string (25 downto 1) := "canny_edge_top_output.bmp";
     constant COMPARE_NAME : string (21 downto 1) := "stage4_hysteresis.bmp";
     constant CLOCK_PERIOD : time := 10 ns
 );
-end entity AVED_tb;
+end entity Canny_Edge_tb;
 
 
-architecture behavior of AVED_tb is 
+architecture behavior of Canny_Edge_tb is
 
     function to_slv(c : character) return std_logic_vector is
     begin
         return std_logic_vector(to_unsigned(character'pos(c),8));
     end function to_slv;
-    
+
     function to_char(v : std_logic_vector) return character is
     begin
         return character'val(to_integer(unsigned(v)));
     end function to_char;
-    
+
     type raw_file is file of character;
 
     signal clock : std_logic := '1';
     signal reset : std_logic := '0';
     signal start : std_logic := '0';
     signal done : std_logic := '0';
-    
+
 	signal in_full : std_logic;
 	signal in_wr_en : std_logic;
 	signal in_din: std_logic_vector (23 downto 0);
@@ -49,7 +49,7 @@ architecture behavior of AVED_tb is
 
 begin
 
-    edge_detect_inst : component AVED_top
+    edge_detect_inst : component Canny_Edge_top
     generic map
     (
         WIDTH       => IMG_WIDTH,
@@ -136,8 +136,8 @@ begin
         wait;
     end process tb_process;
 
-    
-    img_read_process : process 
+
+    img_read_process : process
         file in_file : raw_file;
         variable char1, char2, char3 : character;
         variable ln1 : line;
@@ -154,14 +154,14 @@ begin
         writeline( output, ln1 );
 
         file_open( in_file, IMG_IN_NAME, read_mode );
-		in_wr_en <= '0';		
+		in_wr_en <= '0';
 
         -- read header
 		while ( not ENDFILE( in_file) and i < 54 ) loop
             read( in_file, char1 );
             i := i + 1;
         end loop;
-        
+
 		while ( not ENDFILE( in_file) ) loop
 			wait until (clock = '1');
 			wait until (clock = '0');
@@ -174,7 +174,7 @@ begin
 			else
 				in_wr_en <= '0';
 			end if;
-		end loop;		
+		end loop;
 
 		wait until (clock = '1');
 		wait until (clock = '0');
@@ -185,8 +185,8 @@ begin
     end process img_read_process;
 
 
-            
-    img_write_process : process 
+
+    img_write_process : process
         file cmp_file : raw_file;
         file out_file : raw_file;
         variable char : character;
@@ -197,7 +197,7 @@ begin
     begin
         wait until  (reset = '1');
         wait until  (reset = '0');
-        
+
         wait until  (clock = '1');
         wait until  (clock = '0');
 
@@ -217,9 +217,9 @@ begin
             write( out_file, char);
             i := i + 1;
         end loop;
-        
+
         i := 0;
-        
+
 		while ( not ENDFILE(cmp_file) ) loop
 			wait until ( clock = '1');
 			wait until ( clock = '0');
@@ -233,14 +233,14 @@ begin
                 write(out_file, to_char(out_dout));
                 write(out_file, to_char(out_dout));
 
-                write( ln3, string'("@ ") );
-                write( ln3, NOW );
-                write( ln3, string'(": ") );
-                write( ln3, i );
-                write( ln3, string'(": ") );
-                hwrite( ln3, out_dout );
-                writeline( output, ln3 );
-                                
+                --write( ln3, string'("@ ") );
+                --write( ln3, NOW );
+                --write( ln3, string'(": ") );
+                --write( ln3, i );
+                --write( ln3, string'(": ") );
+                --hwrite( ln3, out_dout );
+                --writeline( output, ln3 );
+
 				if ( to_01(unsigned(out_dout)) /= to_01(unsigned(out_data_cmp)) ) then
 					out_errors <= out_errors + 1;
 					write( ln2, string'("@ ") );
@@ -257,9 +257,12 @@ begin
 					hwrite( ln2, std_logic_vector(to_unsigned(i,32)) );
 					write( ln2, string'(".") );
 					writeline( output, ln2 );
-                    exit;
+          --exit;
 				end if;
                 i := i + 1;
+                if (i = 518400) then
+                  exit;
+                end if;
 			else
 				out_rd_en <= '0';
 			end if;
