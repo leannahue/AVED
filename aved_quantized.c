@@ -24,15 +24,8 @@
 #define HALF_PI QUANTIZE_F(MPI/2)
 
 #define CORDIC_NTAB 16
-// Values from VHDL, need to normalize for quantized BITS. VHDL (CORDIC_TABLE/2^32)*2^10
-// const int CORDIC_DEG = {45.0, 26.565, 14.036, 7.125, 3.576, 1.790, 0.895, 0.448, 0.224, 0.112,0.056,0.028,0.014,0.007,0.003,0};
-// const int CORDIC_RAD = {0.7854,0.46365,0.24497,0.12435,0.062413,0.031241,0.015621,0.0078191,0.0039095,0.0019548,0.00097738,0.00048869,0.00024435,0.00012217,0.00005.36,0};
+
 const int CORDIC_TABLE[16] = {804, 474, 250, 127, 63, 31, 15, 8, 4, 2, 1, 0, 0, 0, 0, 0};
-// const int CORDIC_TABLE[16] = {12867, 7596, 4013, 2037, 1022, 511, 255, 127, 63, 31, 15, 7, 3, 1, 0, 0};   // cordic_rad*2^14
-// signal CORDIC_TABLE : atan_table_lut := (x"3243", x"1DAC", x"0FAD", x"07F5", x"03FE", x"01FF", x"00FF", x"007F", 
-//											 x"003F", x"001F", x"000F", x"0007", x"0003", x"0001", x"0000", x"0000");
-
-
 
 struct pixel {
     unsigned char b;
