@@ -421,12 +421,13 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
     {
         for(int t=0;t<accu_w;t++)
         {
-            // if ((int)accu[(r*accu_w) + t] != 0)  printf("accu value %d\n\n", (int)accu[(r*accu_w) + t]);
+            // if ((int)accu[(r*accu_w) + t] != 0)
             if(accu[(r*accu_w) + t] >= accu_threshold)
             {
 //                printf("accu > threshold: accu: %d,  accu_index: %d; rho: %d,  theta: %d \n", accu[(r*accu_w)+t],(r*accu_w)+t,r,t);
-                //Is this point a local maxima (9x9)
-                //Is this point a local maxima (7x7)
+                
+                //    Thresholding /////////////////////////////////////////////////////////////////////////////
+                
                 int max = accu[(r*accu_w) + t];
                 for(int ly=-3;ly<=3;ly++)
                 {
@@ -444,16 +445,12 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                 }
                 if(max > (int)accu[(r*accu_w) + t])
                     continue;
+                
+                //    Create finite lines ///////////////////////////////////////////////////////////////////////
+                
                 int x1, y1, x2, y2;
                 x1 = y1 = x2 = y2 = 0;
-                
-                // Quantization
-                // int angle_radian = QUANTIZE_F(t*MPI/180);
-                // double theta = (double) angle_radian/QUANT_VAL;
-                // short s = 0, c = 0;
-                // cordic(theta, &s, &c);  // s is sine, c is cosine
-                // int sin_theta = QUANTIZE_F(sin(theta));
-                // int cos_theta = QUANTIZE_F(cos(theta));
+
                 int theta = QUANTIZE_F(t*MPI/180);
                 cordic(theta, &sin_theta, &cos_theta);  // s is sine, c is cosine. Theta is in radian, quantized
                 
@@ -461,7 +458,7 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                 int w_div2      = w >> 1;
                 int h_div2      = h >> 1;
                 int rho_quant = QUANTIZE_I(r - accu_h_div2);
-                
+
                 if(t >= 45 && t <= 135)
                 {
                     //y = (r - x cos(t)) / sin(t)
@@ -482,6 +479,8 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                     // x2 = ((double)(r-(accu_h/2)) - ((y2 - (h/2) ) * sin(t * MPI/180))) / cos(t * MPI/180) + (w / 2);
                     x2 = ((rho_quant - (y2 - h_div2) * sin_theta) / cos_theta) + w_div2;
                 }
+                
+                //    Project lines back onto the image /////////////////////////////////////////////////////////
                 
                 if (x1 > (w - 1)) x1 = (w - 1);
                 if (x2 > (w - 1)) x2 = (w - 1);
