@@ -421,7 +421,6 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
     {
         for(int t=0;t<accu_w;t++)
         {
-            // if ((int)accu[(r*accu_w) + t] != 0)
             if(accu[(r*accu_w) + t] >= accu_threshold)
             {
 //                printf("accu > threshold: accu: %d,  accu_index: %d; rho: %d,  theta: %d \n", accu[(r*accu_w)+t],(r*accu_w)+t,r,t);
@@ -520,7 +519,6 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                 //            double slope = ceil (y2 - y1) / (x2 - x1);
 
                 int slope  = QUANTIZE_I(delta_y) / delta_x;
-//                int slope2 = floor(slope);
                 
                 int start_yy = QUANTIZE_I(start_y);
                 int end_yy   = QUANTIZE_I(end_y);
@@ -529,8 +527,6 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                 
                 int x = start_x;
                 
-                // double slope2 = (ceil (slope));
-                // printf("slope %f %f %d\n", slope, slope2, slope3);
                 printf("slope: %d \n", slope);
                 
                 int y_pixel = start_yy;
