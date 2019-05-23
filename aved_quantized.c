@@ -44,18 +44,18 @@ int read_bmp(FILE *f, unsigned char* header, int *height, int *width, struct pix
         printf("Error reading BMP header\n");
         return -1;
     }
-    
+
     // get height and width of image
     int w = (int)(header[19] << 8) | header[18];
     int h = (int)(header[23] << 8) | header[22];
-    
+
     // Read in the image
     int size = w * h;
     if (fread(data, sizeof(struct pixel), size, f) != size){
         printf("Error reading BMP image\n");
         return -1;
     }
-    
+
     *width = w;
     *height = h;
     return 0;
@@ -63,14 +63,14 @@ int read_bmp(FILE *f, unsigned char* header, int *height, int *width, struct pix
 
 void write_rgb_bmp(const char *filename, unsigned char* header, struct pixel* data) {
     FILE* file = fopen(filename, "wb");
-    
+
     // get height and width of image
     int width = (int)(header[19] << 8) | header[18];
     int height = (int)(header[23] << 8) | header[22];
     int size = width * height;
-    
+
     fwrite(header, sizeof(unsigned char), 54, file);
-    
+
     fwrite(data, sizeof(struct pixel), size, file);
     fclose(file);
 }
@@ -78,17 +78,17 @@ void write_rgb_bmp(const char *filename, unsigned char* header, struct pixel* da
 // Write the grayscale image to disk.
 void write_grayscale_bmp(const char *filename, unsigned char* header, unsigned char* data) {
     FILE* file = fopen(filename, "wb");
-    
+
     // get height and width of image
     int width = (int)(header[19] << 8) | header[18];
     int height = (int)(header[23] << 8) | header[22];
     int size = width * height;
     struct pixel * data_temp = (struct pixel *)malloc(size*sizeof(struct pixel));
-    
+
     // write the 54-byte header
     fwrite(header, sizeof(unsigned char), 54, file);
     int y, x;
-    
+
     // the r field of the pixel has the grayscale value. copy to g and b.
     for (y = 0; y < height; y++) {
         for (x = 0; x < width; x++) {
@@ -97,10 +97,10 @@ void write_grayscale_bmp(const char *filename, unsigned char* header, unsigned c
             (*(data_temp + y*width + x)).r = (*(data + y*width + x));
         }
     }
-    
+
     size = width * height;
     fwrite(data_temp, sizeof(struct pixel), size, file);
-    
+
     free(data_temp);
     fclose(file);
 }
@@ -125,7 +125,7 @@ void gaussian_blur(unsigned char *in_data, int height, int width, unsigned char 
     };
     int x, y, i, j;
     unsigned int numerator_r, denominator;
-    
+
     for (y = 0; y < height; y++) {
         for (x = 0; x < width; x++) {
             numerator_r = 0;
@@ -157,10 +157,10 @@ void edge_detect(unsigned char in_data[3][3], unsigned char *out_data)
         {  0,   0,   0 },
         {  1,   2,   1 }
     };
-    
+
     int horizontal_gradient = 0;
     int vertical_gradient = 0;
-    
+
     for (int j = 0; j < 3; j++)
     {
         for (int i = 0; i < 3; i++)
@@ -171,7 +171,7 @@ void edge_detect(unsigned char in_data[3][3], unsigned char *out_data)
             //printf("v: %d * %d\n", in_data[j][i], vertical_operator[i][j] );
         }
     }
-    
+
     // Check for overflow
     int v = (abs(horizontal_gradient) + abs(vertical_gradient)) / 2;
     //printf("grad: %d\n\n", v);
@@ -182,13 +182,13 @@ void sobel_filter(unsigned char *in_data, int height, int width, unsigned char *
 {
     unsigned char buffer[3][3];
     unsigned char data = 0;
-    
+
     for (int y = 0; y < height; y++)
     {
         for (int x = 0; x < width; x++)
         {
             data = 0;
-            
+
             // Along the boundaries, set to 0
             if (y != 0 && x != 0 && y != height-1 && x != width-1)
             {
@@ -199,10 +199,10 @@ void sobel_filter(unsigned char *in_data, int height, int width, unsigned char *
                         buffer[j+1][i+1] = in_data[(y+j)*width + (x+i)];
                     }
                 }
-                
+
                 edge_detect( buffer, &data );
             }
-            
+
             out_data[y*width + x] = data;
         }
     }
@@ -210,7 +210,7 @@ void sobel_filter(unsigned char *in_data, int height, int width, unsigned char *
 
 void non_maximum_suppressor(unsigned char *in_data, int height, int width, unsigned char *out_data)
 {
-    
+
     for (int y = 0; y < height; y++) {
         for (int x = 0; x < width; x++) {
             // Along the boundaries, set to 0
@@ -226,9 +226,9 @@ void non_maximum_suppressor(unsigned char *in_data, int height, int width, unsig
             in_data[(y-1)*width + x - 1] + in_data[(y+1)*width + x + 1];
             unsigned int north_east =
             in_data[(y+1)*width + x - 1] + in_data[(y-1)*width + x + 1];
-            
+
             out_data[y*width + x] = 0;
-            
+
             if (north_south >= east_west && north_south >= north_west && north_south >= north_east) {
                 if (in_data[y*width + x] > in_data[y*width + x - 1] &&
                     in_data[y*width + x] >= in_data[y*width + x + 1])
@@ -267,7 +267,7 @@ void hysteresis_filter(unsigned char *in_data, int height, int width, unsigned c
                 out_data[y*width + x] = 0;
                 continue;
             }
-            
+
             // If pixel is strong or it is somewhat strong and at least one
             // neighbouring pixel is strong, keep it. Otherwise zero it.
             if (in_data[y*width + x] > high_threshold ||
@@ -291,26 +291,26 @@ void hysteresis_filter(unsigned char *in_data, int height, int width, unsigned c
 
 int find_max(unsigned char* data, int width, int height) {
     int max = 0;
-    
+
     for (int i = 0; i < width*height; i++) {
         if (data[i] > max) {
             max = data[i];
         }
     }
-    
+
     // printf("img_data_max : %d \n", max );
     return max;
 }
 
 int find_max_int(unsigned int* data, int width, int height) {
     int max = 0;
-    
+
     for (int i = 0; i < width*height; i++) {
         if (data[i] > max) {
             max = data[i];
         }
     }
-    
+
     // printf("accu_max : %d \n", max );
     return max;
 }
@@ -353,10 +353,10 @@ void cordic(int rad, short *s, short *c) {
 }
 
 int HoughTransform(unsigned char* img_data, int w, int h,  int hough_h, int accu_h, int accu_w, unsigned int* accu) { // hough_h is quantized
-    
+
     short sin_theta;
     short cos_theta;
-    
+
     // double center_x = w/2;
     // int center_x = QUANTIZE_I(w/2);
 //    int center_x = floor(w/2);
@@ -391,21 +391,21 @@ int HoughTransform(unsigned char* img_data, int w, int h,  int hough_h, int accu
             }
         }
     }
-    
+
     return 0;
 }
 
 // Search accumulator for all lines greater than a certain threshold
 int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int accu_h, int accu_w, struct pixel * out_data) {
-    
+
     short sin_theta;
     short cos_theta;
-    
+    printf("accu_h: %d and accu_w: %d\n", accu_h, accu_w);
 //    int accu_threshold = (int) ceil(find_max_int(accu, accu_w, accu_h)*0.5);
     int accu_threshold = find_max_int(accu, accu_w, accu_h) >> 1;
 //    printf("accu_h: %d,  accu_threshold: %d \n", accu_h,accu_threshold);
 //    printf("accu_w: %d,  w: %d,  h: %d \n", accu_w,w,h);
-    
+
     for (int y = 0; y < h; y++) {
         for (int x = 0; x < w; x++) {
             (*(out_data + y*w + x)).b = (*(in_data + y*w + x));
@@ -413,9 +413,9 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
             (*(out_data + y*w + x)).r = (*(in_data + y*w + x));
         }
     }
-    
+
     if(accu == 0)  return 0;
-    
+
     int i = 0;
     for(int r=0;r<accu_h;r++)
     {
@@ -424,9 +424,9 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
             if(accu[(r*accu_w) + t] >= accu_threshold)
             {
 //                printf("accu > threshold: accu: %d,  accu_index: %d; rho: %d,  theta: %d \n", accu[(r*accu_w)+t],(r*accu_w)+t,r,t);
-                
+
                 //    Thresholding /////////////////////////////////////////////////////////////////////////////
-                
+
                 int max = accu[(r*accu_w) + t];
                 for(int ly=-3;ly<=3;ly++)
                 {
@@ -444,15 +444,16 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                 }
                 if(max > (int)accu[(r*accu_w) + t])
                     continue;
-                
+
                 //    Create finite lines ///////////////////////////////////////////////////////////////////////
-                
+                printf("coordinates in hough space: rho = %d and theta = %d\n", r, t);
+                printf("accumulator value = %d\n", accu[(r*accu_w) + t]);
                 int x1, y1, x2, y2;
                 x1 = y1 = x2 = y2 = 0;
 
                 int theta = QUANTIZE_F(t*MPI/180);
                 cordic(theta, &sin_theta, &cos_theta);  // s is sine, c is cosine. Theta is in radian, quantized
-                
+
                 int accu_h_div2 = accu_h >> 1;
                 int w_div2      = w >> 1;
                 int h_div2      = h >> 1;
@@ -478,20 +479,20 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                     // x2 = ((double)(r-(accu_h/2)) - ((y2 - (h/2) ) * sin(t * MPI/180))) / cos(t * MPI/180) + (w / 2);
                     x2 = ((rho_quant - (y2 - h_div2) * sin_theta) / cos_theta) + w_div2;
                 }
-                
+
                 //    Project lines back onto the image /////////////////////////////////////////////////////////
-                
+
                 if (x1 > (w - 1)) x1 = (w - 1);
                 if (x2 > (w - 1)) x2 = (w - 1);
                 if (y1 > (h - 1)) y1 = (w - 1);
                 if (y2 > (h - 1)) y2 = (w - 1);
-                
+
                 int start_y, end_y, start_x, end_x, change_y;
                 int delta_x;
                 int delta_y;
                 int x_direction;
                 int y_direction;
-                
+
                 if (x1 > x2) {
                     delta_x     = x1 - x2;
                     x_direction = 1;     // decrement
@@ -499,7 +500,7 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                     delta_x     = x2 - x1;
                     x_direction = 0;     // increment
                 }
-                
+
                 if (y1 > y2) {
                     delta_y     = y1 - y2;
                     y_direction = 1;     // decrement
@@ -507,28 +508,28 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
                     delta_y     = y2 - y1;
                     y_direction = 0;     // increment
                 }
-                
+
                 start_x = x1;
                 end_x   = x2;
                 start_y = y1;
                 end_y   = y2;
-                
+
                 printf("drawing line from (%d, %d) to (%d, %d)\n", x1, y1, x2, y2);
 //                printf("start_x:%d,  end_x: %d; start_y: %d, end_y: %d)\n", start_x, end_x, start_y, end_y);
-                
+
                 //            double slope = ceil (y2 - y1) / (x2 - x1);
 
                 int slope  = QUANTIZE_I(delta_y) / delta_x;
-                
+
                 int start_yy = QUANTIZE_I(start_y);
                 int end_yy   = QUANTIZE_I(end_y);
                 int i_start = y_direction ? end_yy   : start_yy;
                 int i_end   = y_direction ? start_yy : end_yy;
-                
+
                 int x = start_x;
-                
+
                 printf("slope: %d \n", slope);
-                
+
                 int y_pixel = start_yy;
                 for (int yy = i_start; yy <= i_end; yy = yy + slope) {
                     if (y_direction == 1) {
@@ -546,7 +547,7 @@ int HoughGetLines(unsigned char* in_data, unsigned int* accu, int w, int h, int 
             } // if accu > accu_threshold
         } // for t loop
     } // for r loop
-    
+
     return 0;
 }  // int HoughGetLines
 
@@ -561,49 +562,49 @@ int main(int argc, char *argv[]) {
      */
     unsigned char header[64];
     int height, width;
-    
+
     // Check inputs
     if (argc < 2) {
         printf("Usage: edgedetect <BMP filename>\n");
         return 0;
     }
-    
+
     FILE * f = fopen(argv[1],"rb");
     if ( f == NULL ) return 0;
-    
+
     struct pixel *rgb_data = (struct pixel *)malloc(1024*1024*sizeof(struct pixel));
-    
+
     // read the bitmap
     read_bmp(f, header, &height, &width, rgb_data);
-    
+
     unsigned char *gs_data = (unsigned char *)malloc(width*height*sizeof(unsigned char));
     unsigned char *gb_data = (unsigned char *)malloc(width*height*sizeof(unsigned char));
     unsigned char *sobel_data = (unsigned char *)malloc(width*height*sizeof(unsigned char));
     unsigned char *nms_data = (unsigned char *)malloc(width*height*sizeof(unsigned char));
     unsigned char *h_data = (unsigned char *)malloc(width*height*sizeof(unsigned char));
-    
+
     /// Grayscale conversion
     convert_to_grayscale(rgb_data, height, width, gs_data);
     write_grayscale_bmp("stage0_grayscale.bmp", header, gs_data);
-    
+
     /// Gaussian filter
     gaussian_blur(gs_data, height, width, gb_data);
     write_grayscale_bmp("stage1_gaussian.bmp", header, gb_data);
-    
+
     /// Sobel operator
     sobel_filter(gb_data, height, width, sobel_data);
     write_grayscale_bmp("stage2_sobel.bmp", header, sobel_data);
-    
+
     /// Non-maximum suppression
     non_maximum_suppressor(sobel_data, height, width, nms_data);
     write_grayscale_bmp("stage3_nonmax_suppression.bmp", header, nms_data);
-    
+
     /// Hysteresis
     hysteresis_filter(nms_data, height, width, h_data);
     write_grayscale_bmp("stage4_hysteresis.bmp", header, h_data);
-    
+
     // Hough Transform
-    
+
     //Create the accu
     // double hough_h = ((sqrt(2.0) * (double)(height > width? height : width)) / 2.0);
     int sqrt2_quant = QUANTIZE_F(1.414213562);
@@ -612,17 +613,17 @@ int main(int argc, char *argv[]) {
     int accu_w = 180;
     unsigned int* accu = (unsigned int*)calloc(accu_h * accu_w, sizeof(unsigned int));
     int accu_threshold = 175;
-    
+
     int size = width*height;
     struct pixel * rgb_out_data = (struct pixel *)malloc(size*sizeof(struct pixel));
-    
+
     int max_pixel_val = find_max(h_data, width, height);
     // printf("max value of canny edge image is %d\n", max_pixel_val);
-    
+
     HoughTransform(h_data, width, height, hough_h, accu_h, accu_w, accu); // hough_h is quantized
     HoughGetLines(h_data, accu, width, height, accu_h, accu_w, rgb_out_data);
     write_rgb_bmp("HoughTransform_Quantized.bmp", header, rgb_out_data);
-    
+
     return 0;
 }
 

@@ -158,6 +158,8 @@ begin
 
             when s3 =>
                 if ( out_full = '0' ) then
+		    shift_reg_c(0 to REG_SIZE-2) <= shift_reg(1 to REG_SIZE-1);
+                    shift_reg_c(REG_SIZE-1) <= x"00";
                     x_c <= x + 1;
                     if ( x = WIDTH - 1 ) then
                         x_c <= 0;
