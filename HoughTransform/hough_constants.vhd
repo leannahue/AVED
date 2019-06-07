@@ -6,8 +6,12 @@ use STD.textio.all;
 
 package hough_constants is
 
-	constant IMG_WIDTH			: natural := 720;
-	constant IMG_HEIGHT			: natural := 720;
+-- Quantize 14 bits
+
+	-- constant IMG_WIDTH			: natural := 720;
+	-- constant IMG_HEIGHT			: natural := 720;
+	constant IMG_WIDTH			: natural := 216;
+	constant IMG_HEIGHT			: natural := 216;
 	constant IMG_SIZE				: natural := IMG_WIDTH*IMG_HEIGHT;
 	constant MAG_WIDTH			: natural := 8;
 	constant RHO_WIDTH			: natural := 10;
@@ -17,14 +21,14 @@ package hough_constants is
 	constant H_div2         : integer := IMG_HEIGHT / 2; --sqrt(2)*720
 
 	constant ACCU_WIDTH			: natural := 180;
-	constant ACCU_HEIGHT		: natural := 1018;  -- sqrt(2)*IMG_WIDTH + sqrt(2)*IMG_HEIGHT
+	-- constant ACCU_HEIGHT		: natural := 1018;  -- sqrt(2)*IMG_WIDTH + sqrt(2)*IMG_HEIGHT
+	constant ACCU_HEIGHT		: natural := 305;
 
 	constant ACCU_h_div2    : integer := ACCU_HEIGHT / 2;
 
-	constant SQRT_2					: natural := 92682; --sqrt(2)*2^16
-
 	-- int hough_h = sqrt2_quant * ((height > width? height : width) / 2.0);
-	constant HOUGH_H				: natural := 509*2**14;
+	-- constant HOUGH_H				: natural := 509*2**14;
+	constant HOUGH_H				: natural := ACCU_HEIGHT*2**13;
 
 	constant IMG_THRESHOLD  : natural := 70;
 	constant ACCU_THRESHOLD : natural := 110;
@@ -170,5 +174,19 @@ package hough_constants is
 			out_sin_full : in std_logic
 		);
 	end component cordic;
+
+	component cos_table is
+		port (
+			signal theta       : in std_logic_vector (7 downto 0);
+			signal cos_theta   : out std_logic_vector (15 downto 0)
+		);
+	end component cos_table;
+
+	component sin_table is
+		port (
+			signal theta        : in std_logic_vector (7 downto 0);
+			signal sin_theta    : out std_logic_vector (15 downto 0)
+		);
+	end component sin_table;
 
 end package;
