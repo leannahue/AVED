@@ -1,0 +1,71 @@
+C:/Users/24308/Desktop/Hough_LUT/cos_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/cos_table.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity cos_table
+-- Compiling architecture behavioral of cos_table
+
+} {} {}} C:/Users/24308/Desktop/Hough_LUT/fifo.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/fifo.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity fifo
+-- Compiling architecture behavior of fifo
+
+} {} {}} C:/Users/24308/Desktop/Hough_LUT/Hough_w_fifo.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/Hough_w_fifo.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package constants
+-- Compiling entity Hough_w_fifo
+-- Compiling architecture behavior of Hough_w_fifo
+
+} {} {}} C:/Users/24308/Desktop/Hough_LUT/sin_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/sin_table.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity sin_table
+-- Compiling architecture behavioral of sin_table
+
+} {} {}} C:/Users/24308/Desktop/Hough_LUT/constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/constants.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling package constants
+
+} {} {}} C:/Users/24308/Desktop/Hough_LUT/Hough.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/Hough.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package constants
+-- Loading package MATH_REAL
+-- Compiling entity Hough
+-- Compiling architecture behavior of Hough
+
+} {} {}} C:/Users/24308/Desktop/Hough_LUT/Hough_txt_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/24308/Desktop/Hough_LUT/Hough_txt_tb.vhd
+Model Technology ModelSim PE Student Edition vcom 10.4a Compiler 2015.03 Apr  7 2015
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package constants
+-- Loading package MATH_REAL
+-- Compiling entity Hough_txt_tb
+-- Compiling architecture behavior of Hough_txt_tb
+
+} {} {}}
