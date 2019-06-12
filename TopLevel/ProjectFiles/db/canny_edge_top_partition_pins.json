@@ -1,0 +1,161 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "in_full",
+					"strict" : false
+				},
+				{
+					"name" : "out_empty",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[0]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[1]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[2]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[3]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[4]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[5]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[6]",
+					"strict" : false
+				},
+				{
+					"name" : "out_dout[7]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				},
+				{
+					"name" : "in_wr_en",
+					"strict" : false
+				},
+				{
+					"name" : "out_rd_en",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[7]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[15]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[23]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[6]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[14]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[22]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[5]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[13]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[21]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[4]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[12]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[20]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[11]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[19]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[10]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[18]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[9]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[17]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[0]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[8]",
+					"strict" : false
+				},
+				{
+					"name" : "in_din[16]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

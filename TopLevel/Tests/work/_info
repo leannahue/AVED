@@ -1,0 +1,833 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Leanna/Documents/EECS392/hough_transform
+Eaccumulator
+Z0 w1560293449
+Z1 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z2 DPx4 work 15 hough_constants 0 22 DfNkT[=Q2?zco2fET<VW:3
+Z3 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 dC:/Users/Leanna/Documents/EECS392/TopLevel/Tests
+Z8 8C:/Users/Leanna/Documents/EECS392/TopLevel/accumulator.vhd
+Z9 FC:/Users/Leanna/Documents/EECS392/TopLevel/accumulator.vhd
+l0
+L9
+VAXgbXLoEeV>^8:VdH`Y_J0
+!s100 cBmaTOL<Y:LTlUZV6:0JB2
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1560306623
+!i10b 1
+Z12 !s108 1560306623.000000
+Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/accumulator.vhd|
+Z14 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/accumulator.vhd|
+!i113 1
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1 CvgOpt 0
+Abehavior
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 11 accumulator 0 22 AXgbXLoEeV>^8:VdH`Y_J0
+l46
+L22
+Vlg6cSZ<Q<9ZUF=U=zB;LH3
+!s100 NmbjaZoW<aP:0jP[5UlFK3
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Paved_constants
+R2
+Z17 DPx4 work 15 canny_constants 0 22 aAI]2P<IY6eUdOob]Jz<C2
+R3
+R4
+R5
+R6
+w1560306608
+R7
+8C:/Users/Leanna/Documents/EECS392/TopLevel/aved_constants.vhd
+FC:/Users/Leanna/Documents/EECS392/TopLevel/aved_constants.vhd
+l0
+L9
+VW8G0A>kh3I@]W5Ql7:==H1
+!s100 UkCl^CLHO12OC>_2g0f]f0
+R10
+32
+R11
+!i10b 1
+R12
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/aved_constants.vhd|
+!s107 C:/Users/Leanna/Documents/EECS392/TopLevel/aved_constants.vhd|
+!i113 1
+R15
+R16
+Eaved_top
+Z18 w1560286862
+R2
+R17
+R3
+Z19 DPx4 work 14 aved_constants 0 22 W8G0A>kh3I@]W5Ql7:==H1
+R4
+R5
+R6
+R7
+Z20 8C:/Users/Leanna/Documents/EECS392/TopLevel/aved_top.vhd
+Z21 FC:/Users/Leanna/Documents/EECS392/TopLevel/aved_top.vhd
+l0
+L6
+V>D_D9AE]CRzF04e]O]4mR3
+!s100 oNU8dFbZfz:`5II<7BEem2
+R10
+32
+Z22 !s110 1560306626
+!i10b 1
+Z23 !s108 1560306626.000000
+Z24 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/aved_top.vhd|
+Z25 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/aved_top.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R2
+R17
+R3
+R19
+R4
+R5
+R6
+DEx4 work 8 aved_top 0 22 >D_D9AE]CRzF04e]O]4mR3
+l35
+L27
+Vn;Mn_W;5ULKf02ae8=R490
+!s100 Ve7VHVG]O:lGI93?Bej_Z3
+R10
+32
+R22
+!i10b 1
+R23
+R24
+R25
+!i113 1
+R15
+R16
+Eaved_top_tb
+Z26 w1560290348
+R2
+R17
+R19
+R3
+R4
+R5
+R6
+R7
+Z27 8C:/Users/Leanna/Documents/EECS392/TopLevel/Tests/aved_top_tb.vhd
+Z28 FC:/Users/Leanna/Documents/EECS392/TopLevel/Tests/aved_top_tb.vhd
+l0
+L8
+VOL8gUG4PW;@;Xeh3:H=Xa0
+!s100 nR@he2KoC65ZY6A<ZS[gg0
+R10
+32
+R22
+!i10b 1
+R23
+Z29 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/Tests/aved_top_tb.vhd|
+Z30 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/Tests/aved_top_tb.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R2
+R17
+R19
+R3
+R4
+R5
+R6
+Z31 DEx4 work 11 aved_top_tb 0 22 OL8gUG4PW;@;Xeh3:H=Xa0
+l68
+L23
+Z32 V1M5X<VXQjikiTQ9IFkI]E0
+Z33 !s100 L:nDf1TkAe5K^8<A9N?4^2
+R10
+32
+R22
+!i10b 1
+R23
+R29
+R30
+!i113 1
+R15
+R16
+Pcanny_constants
+R3
+R4
+R5
+R6
+w1560306591
+R7
+8C:/Users/Leanna/Documents/EECS392/TopLevel/canny_constants.vhd
+FC:/Users/Leanna/Documents/EECS392/TopLevel/canny_constants.vhd
+l0
+L7
+VaAI]2P<IY6eUdOob]Jz<C2
+!s100 c;bi5dF[^M[V_nLL`d]811
+R10
+32
+R11
+!i10b 1
+!s108 1560306622.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/canny_constants.vhd|
+!s107 C:/Users/Leanna/Documents/EECS392/TopLevel/canny_constants.vhd|
+!i113 1
+R15
+R16
+Ecanny_edge_top
+Z34 w1560287422
+R3
+R17
+R4
+R5
+R6
+R7
+Z35 8C:/Users/Leanna/Documents/EECS392/TopLevel/Canny_Edge_top.vhd
+Z36 FC:/Users/Leanna/Documents/EECS392/TopLevel/Canny_Edge_top.vhd
+l0
+L6
+V`A^3PgZQL`5j<TEKc6ecG1
+!s100 fh_C@GBICHNRG?1PIS^g23
+R10
+32
+R22
+!i10b 1
+R23
+Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/Canny_Edge_top.vhd|
+Z38 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/Canny_Edge_top.vhd|
+!i113 1
+R15
+R16
+Abehavior
+Z39 DEx4 work 9 grayscale 0 22 1d@H_UT1O@SlJOnaLgVl;0
+R3
+R17
+R4
+R5
+R6
+DEx4 work 14 canny_edge_top 0 22 `A^3PgZQL`5j<TEKc6ecG1
+l78
+L26
+V6=RjPPe3W7?AMe@C4lPG:1
+!s100 oAa]E_>4DhM?bl@jl_>T31
+R10
+32
+R22
+!i10b 1
+R23
+R37
+R38
+!i113 1
+R15
+R16
+Ecos_table
+Z40 w1559884800
+R3
+R2
+R4
+R5
+R6
+R7
+Z41 8C:/Users/Leanna/Documents/EECS392/TopLevel/cos_table.vhd
+Z42 FC:/Users/Leanna/Documents/EECS392/TopLevel/cos_table.vhd
+l0
+L6
+VV[V4O;C]AWiLWkh1PSzR83
+!s100 XMJfTo4?2BZlbWa9m1gW]2
+R10
+32
+Z43 !s110 1560306624
+!i10b 1
+Z44 !s108 1560306624.000000
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/cos_table.vhd|
+Z46 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/cos_table.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 cos_table 0 22 V[V4O;C]AWiLWkh1PSzR83
+l17
+L13
+VRI4Aj5CK6dIez`hcD<aE^3
+!s100 bRHYhdE>OM3i_z4;E@h9Y0
+R10
+32
+R43
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R15
+R16
+Edraw_lines
+Z47 w1560291205
+R3
+R2
+R4
+R5
+R6
+R7
+Z48 8C:/Users/Leanna/Documents/EECS392/TopLevel/draw_lines.vhd
+Z49 FC:/Users/Leanna/Documents/EECS392/TopLevel/draw_lines.vhd
+l0
+L8
+Vhh4g6VI?i1jfH=aFF50J^3
+!s100 C?8V?49LkSS;3haaIeXo71
+R10
+32
+R43
+!i10b 1
+R44
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/draw_lines.vhd|
+Z51 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/draw_lines.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 10 draw_lines 0 22 hh4g6VI?i1jfH=aFF50J^3
+l91
+L35
+VB[ODYHJ6_8GIcAP9^50Zl1
+!s100 ^ZjE:lInAjijzAQHNgH;o2
+R10
+32
+R43
+!i10b 1
+R44
+R50
+R51
+!i113 1
+R15
+R16
+Efifo
+Z52 w1560290221
+R3
+R4
+R5
+R6
+R7
+Z53 8C:/Users/Leanna/Documents/EECS392/TopLevel/fifo.vhd
+Z54 FC:/Users/Leanna/Documents/EECS392/TopLevel/fifo.vhd
+l0
+L200
+V^M@`9DB0IXXP:9ogaGchV2
+!s100 hc>[OnN_dboVL03U5GbKg1
+R10
+32
+R43
+!i10b 1
+R44
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/fifo.vhd|
+Z56 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/fifo.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R4
+R5
+R6
+DEx4 work 4 fifo 0 22 ^M@`9DB0IXXP:9ogaGchV2
+l310
+L221
+VaMFH=k65]]cj;I>1Q@^Ai3
+!s100 =;oJ`XhE23fY3A]blOXUX3
+R10
+32
+R43
+!i10b 1
+R44
+R55
+R56
+!i113 1
+R15
+R16
+Efinite_lines
+Z57 w1559964999
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z58 8C:/Users/Leanna/Documents/EECS392/TopLevel/finite_lines.vhd
+Z59 FC:/Users/Leanna/Documents/EECS392/TopLevel/finite_lines.vhd
+l0
+L9
+V^homj:FQkT0fPn9::0Lha1
+!s100 A:Q@o>TG^]TA>UN?l?g^j3
+R10
+32
+R43
+!i10b 1
+R44
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/finite_lines.vhd|
+Z61 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/finite_lines.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 12 finite_lines 0 22 ^homj:FQkT0fPn9::0Lha1
+l92
+L28
+VhjE@S@cTV`YP?g60`:JiJ0
+!s100 3_WYFi]1OoN<[QSzzC`2;0
+R10
+32
+R43
+!i10b 1
+R44
+R60
+R61
+!i113 1
+R15
+R16
+Egaussian
+Z62 w1560304609
+R17
+R3
+R4
+R5
+R6
+R7
+Z63 8C:/Users/Leanna/Documents/EECS392/TopLevel/gaussian.vhd
+Z64 FC:/Users/Leanna/Documents/EECS392/TopLevel/gaussian.vhd
+l0
+L8
+VM<?jOSE<K]QTA>l97b_8<1
+!s100 ^k6NaeKdijFJ_gTABBQkH1
+R10
+32
+R43
+!i10b 1
+R44
+Z65 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/gaussian.vhd|
+Z66 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/gaussian.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R17
+R3
+R4
+R5
+R6
+DEx4 work 8 gaussian 0 22 M<?jOSE<K]QTA>l97b_8<1
+l83
+L22
+VZBOHMFDTo7^LBUIS21=3J1
+!s100 ZN2h7476a1l==VQObP7XW3
+R10
+32
+R43
+!i10b 1
+R44
+R65
+R66
+!i113 1
+R15
+R16
+Egrayscale
+Z67 w1560283983
+R17
+R3
+R4
+R5
+R6
+R7
+Z68 8C:/Users/Leanna/Documents/EECS392/TopLevel/grayscale.vhd
+Z69 FC:/Users/Leanna/Documents/EECS392/TopLevel/grayscale.vhd
+l0
+L8
+V1d@H_UT1O@SlJOnaLgVl;0
+!s100 n4m@7V:gh^f>[zVWcNC8@2
+R10
+32
+Z70 !s110 1560306625
+!i10b 1
+Z71 !s108 1560306625.000000
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/grayscale.vhd|
+Z73 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/grayscale.vhd|
+!i113 1
+R15
+R16
+Acombinational
+R17
+R3
+R4
+R5
+R6
+R39
+l76
+L75
+VL3Z2YWJdP:aen4mlfGzMb2
+!s100 Cn;m7cEei3T:[:N`NVL4i0
+R10
+32
+R70
+!i10b 1
+R71
+R72
+R73
+!i113 1
+R15
+R16
+Abehavior
+R17
+R3
+R4
+R5
+R6
+R39
+l28
+L22
+V:Q=KT^F4YUO8GjX4IHH<S2
+!s100 lNM3bbDJ9EJ3<DCZ^bCDn3
+R10
+32
+R70
+!i10b 1
+R71
+R72
+R73
+!i113 1
+R15
+R16
+Phough_constants
+R3
+R4
+R5
+R6
+w1560306572
+R7
+8C:/Users/Leanna/Documents/EECS392/TopLevel/hough_constants.vhd
+FC:/Users/Leanna/Documents/EECS392/TopLevel/hough_constants.vhd
+l0
+L7
+VDfNkT[=Q2?zco2fET<VW:3
+!s100 K[`dS42@M_@`Hz<??l_F:2
+R10
+32
+R11
+!i10b 1
+R12
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/hough_constants.vhd|
+!s107 C:/Users/Leanna/Documents/EECS392/TopLevel/hough_constants.vhd|
+!i113 1
+R15
+R16
+Ehough_top
+Z74 w1560287613
+R3
+R2
+R4
+R5
+R6
+R7
+Z75 8C:/Users/Leanna/Documents/EECS392/TopLevel/hough_top.vhd
+Z76 FC:/Users/Leanna/Documents/EECS392/TopLevel/hough_top.vhd
+l0
+L6
+VfeAeH:gO]S5nZASB`7Y311
+!s100 _lLDn=K=FI9BC:GTM63Rm0
+R10
+32
+R22
+!i10b 1
+R23
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/hough_top.vhd|
+Z78 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/hough_top.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 hough_top 0 22 feAeH:gO]S5nZASB`7Y311
+l75
+L29
+VgQdX@Ln14E?gT;8UQo9HI3
+!s100 K^EnH8`zJz3DGadRR5dde1
+R10
+32
+R22
+!i10b 1
+R23
+R77
+R78
+!i113 1
+R15
+R16
+Ehysteresis
+Z79 w1560287393
+R3
+R17
+R4
+R5
+R6
+R7
+Z80 8C:/Users/Leanna/Documents/EECS392/TopLevel/hysteresis.vhd
+Z81 FC:/Users/Leanna/Documents/EECS392/TopLevel/hysteresis.vhd
+l0
+L6
+VLH^Zef8BRzifb;KZkocO50
+!s100 <1M]kRbaj1jEBN4P:QP<E2
+R10
+32
+R70
+!i10b 1
+R71
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/hysteresis.vhd|
+Z83 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/hysteresis.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R17
+R4
+R5
+R6
+DEx4 work 10 hysteresis 0 22 LH^Zef8BRzifb;KZkocO50
+l90
+L20
+V>gJ?WU92XB_>[SU1YJIRz0
+!s100 7bL08ZY<;eKZ4mHh0eeeN3
+R10
+32
+R70
+!i10b 1
+R71
+R82
+R83
+!i113 1
+R15
+R16
+Enon_maximum_suppression
+Z84 w1560283997
+R3
+R17
+R4
+R5
+R6
+R7
+Z85 8C:/Users/Leanna/Documents/EECS392/TopLevel/non_maximum_suppression.vhd
+Z86 FC:/Users/Leanna/Documents/EECS392/TopLevel/non_maximum_suppression.vhd
+l0
+L6
+VnP4=k]Sec`_GmG[1Ca5kH3
+!s100 [QiT_kMWRM?`6Lc3=_0FC1
+R10
+32
+R70
+!i10b 1
+R71
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/non_maximum_suppression.vhd|
+Z88 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/non_maximum_suppression.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R17
+R4
+R5
+R6
+DEx4 work 23 non_maximum_suppression 0 22 nP4=k]Sec`_GmG[1Ca5kH3
+l99
+L19
+V22S:3Ueka1[kYl52^Y4c80
+!s100 oljVc;5JYCQTjhRe@0eK;0
+R10
+32
+R70
+!i10b 1
+R71
+R87
+R88
+!i113 1
+R15
+R16
+Esin_table
+Z89 w1559884939
+R3
+R2
+R4
+R5
+R6
+R7
+Z90 8C:/Users/Leanna/Documents/EECS392/TopLevel/sin_table.vhd
+Z91 FC:/Users/Leanna/Documents/EECS392/TopLevel/sin_table.vhd
+l0
+L6
+V^KRmazNGDc>0<QN8j>?890
+!s100 9^XFF]EOkIPLHn;1A>MN01
+R10
+32
+R70
+!i10b 1
+R71
+Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/sin_table.vhd|
+Z93 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/sin_table.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 sin_table 0 22 ^KRmazNGDc>0<QN8j>?890
+l17
+L13
+Vf;ACM_M1aFLRENn;;E0DA0
+!s100 4PihAnldlKn503hbOG=4E1
+R10
+32
+R70
+!i10b 1
+R71
+R92
+R93
+!i113 1
+R15
+R16
+Esobel
+Z94 w1560286511
+R3
+R17
+R4
+R5
+R6
+R7
+Z95 8C:/Users/Leanna/Documents/EECS392/TopLevel/sobel.vhd
+Z96 FC:/Users/Leanna/Documents/EECS392/TopLevel/sobel.vhd
+l0
+L6
+VXE2zcRM;eM5U??Uga462Z0
+!s100 ;Z8a_OXY<`f1U[SGa5>nh3
+R10
+32
+R22
+!i10b 1
+R23
+Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/sobel.vhd|
+Z98 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/sobel.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R17
+R4
+R5
+R6
+DEx4 work 5 sobel 0 22 XE2zcRM;eM5U??Uga462Z0
+l80
+L20
+VLNHoJi93Fhz]ASHgYOiab1
+!s100 3zUQgd5j_nAYR]Yj5HNLV0
+R10
+32
+R22
+!i10b 1
+R23
+R97
+R98
+!i113 1
+R15
+R16
+Ethreshold
+Z99 w1559965680
+R3
+R2
+R4
+R5
+R6
+R7
+Z100 8C:/Users/Leanna/Documents/EECS392/TopLevel/threshold.vhd
+Z101 FC:/Users/Leanna/Documents/EECS392/TopLevel/threshold.vhd
+l0
+L8
+V=Dc]kI6_W?d2>jjUIV^FI3
+!s100 n]<kOW7Nlo3g6AZN1agmB3
+R10
+32
+R11
+!i10b 1
+R12
+Z102 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel/threshold.vhd|
+Z103 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel/threshold.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 threshold 0 22 =Dc]kI6_W?d2>jjUIV^FI3
+l192
+L23
+VM9[[L9Ai3[z>680Tja9lk0
+!s100 =k=0a92XmHE]UD:G4gz842
+R10
+32
+R11
+!i10b 1
+R12
+R102
+R103
+!i113 1
+R15
+R16

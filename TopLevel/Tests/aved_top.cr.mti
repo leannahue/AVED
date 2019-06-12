@@ -1,0 +1,173 @@
+C:/Users/Leanna/Documents/EECS392/TopLevel/sobel.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/sobel.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity sobel
+-- Compiling architecture behavior of sobel
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/threshold.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/threshold.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity threshold
+-- Compiling architecture behavioral of threshold
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/Canny_Edge_top.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/Canny_Edge_top.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity Canny_Edge_top
+-- Compiling architecture behavior of Canny_Edge_top
+-- Loading entity grayscale
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/Tests/aved_top_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/Tests/aved_top_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Loading package aved_constants
+-- Compiling entity aved_top_tb
+-- Compiling architecture behavior of aved_top_tb
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/sin_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/sin_table.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity sin_table
+-- Compiling architecture behavioral of sin_table
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/finite_lines.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/finite_lines.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Loading package MATH_REAL
+-- Compiling entity finite_lines
+-- Compiling architecture behavior of finite_lines
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/aved_top.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/aved_top.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Loading package aved_constants
+-- Compiling entity aved_top
+-- Compiling architecture behavior of aved_top
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/hysteresis.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/hysteresis.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity hysteresis
+-- Compiling architecture behavior of hysteresis
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/grayscale.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/grayscale.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity grayscale
+-- Compiling architecture behavior of grayscale
+-- Compiling architecture combinational of grayscale
+-- Loading entity grayscale
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/fifo.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/fifo.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity fifo
+-- Compiling architecture behavior of fifo
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/hough_top.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/hough_top.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity hough_top
+-- Compiling architecture behavior of hough_top
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/draw_lines.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/draw_lines.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity draw_lines
+-- Compiling architecture behavioral of draw_lines
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/non_maximum_suppression.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/non_maximum_suppression.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity non_maximum_suppression
+-- Compiling architecture behavioral of non_maximum_suppression
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/gaussian.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/gaussian.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity gaussian
+-- Compiling architecture behavior of gaussian
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel/cos_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel/cos_table.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity cos_table
+-- Compiling architecture behavioral of cos_table
+
+} {} {}}

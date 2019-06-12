@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use IEEE.std_logic_textio.all;
 use STD.textio.all;
-use work.constants.all;
+use work.hough_constants.all;
 use ieee.math_real.all;
 
 entity Hough_txt_tb is
@@ -52,7 +52,7 @@ architecture behavior of Hough_txt_tb is
 
 begin
 
-    Hough_inst : component Hough_w_fifo
+    Hough_inst : component Hough_LUT
     port map
     (
         clock       => clock,
@@ -65,7 +65,7 @@ begin
         out_dout    => out_dout
     );
 
- 
+
     clock_process : process
     begin
         clock <= '1';
@@ -186,7 +186,7 @@ begin
 
 
     img_write_process : process
-        
+
         file Hough_out		: text open write_mode is "Hough.out";
 	file Hough_cmp		: text open read_mode  is "accu_c_72_72.txt";
         variable char : character;
@@ -210,16 +210,16 @@ begin
         write( ln1, string'("...") );
         writeline( output, ln1 );
 
-        
-		while ( i < 18180 ) loop
+
+		while ( i < ACCU_WIDTH*ACCU_HEIGHT ) loop
 			wait until ( clock = '1');
 			wait until ( clock = '0');
 			if ( out_empty = '0' ) then
 				out_rd_en <= '1';
 				readline(Hough_cmp, cmp_line);
 				read(cmp_line,cmp_data);
-                
-		
+
+
 				out_data_int := to_integer(unsigned(out_dout));
 				write(my_line,out_data_int);
 				writeline(Hough_out,my_line);
@@ -241,11 +241,11 @@ begin
 					writeline( output, ln2 );
                     --exit;
 				end if;
-               
 
-				
+
+
                 i := i + 1;
-		if (i = 18180) then
+		if (i = ACCU_WIDTH*ACCU_HEIGHT) then
 		exit;
 		end if;
 			else
@@ -256,8 +256,8 @@ begin
 		wait until (clock = '1');
 		wait until (clock = '0');
 		out_rd_en <= '0';
-        
-        
+
+
         out_read_done <= '1';
         wait;
     end process img_write_process;
