@@ -33,14 +33,14 @@ architecture behavior of Hough is
 component sin_table is
 	port (
 		signal theta        : in std_logic_vector (7 downto 0);
-		signal sin_theta    : out std_logic_vector (15 downto 0)
+		signal sin_theta    : out std_logic_vector (17 downto 0)
 	);
 end component;
 
 component cos_table is
 	port (
 		signal theta       : in std_logic_vector (7 downto 0);
-		signal cos_theta   : out std_logic_vector (15 downto 0)
+		signal cos_theta   : out std_logic_vector (17 downto 0)
 	);
 end component;
 
@@ -62,8 +62,8 @@ end component;
 
     signal theta,theta_c : integer;
     signal theta_in  : std_logic_vector (7 downto 0);
-    signal cos_theta : std_logic_vector (15 downto 0);
-    signal sin_theta : std_logic_vector (15 downto 0);
+    signal cos_theta : std_logic_vector (17 downto 0);
+    signal sin_theta : std_logic_vector (17 downto 0);
 --sqrt2= 1.41421356
 --PI=3.14159265
 
