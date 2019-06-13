@@ -67,6 +67,9 @@ package hough_constants is
 			signal canny_out_empty  : in std_logic;
 			signal in_din    : in std_logic_vector (7 downto 0);
 			signal out_rd_en : in std_logic;
+			signal in_fifo_empty : in std_logic;
+	  	signal in_fifo_rd_en : in std_logic;
+	  	signal in_fifo_dout  : in std_logic_vector (23 downto 0);
 			signal in_rd_en  : out std_logic;
 			signal out_empty : out std_logic;
 			signal out_dout  : out std_logic_vector (7 downto 0);

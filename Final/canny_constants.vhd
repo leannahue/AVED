@@ -6,8 +6,8 @@ use STD.textio.all;
 
 package canny_constants is
 
-	constant IMG_WIDTH	: natural := 216; -- CHANGE WHEN IMAGE SIZE CHANGES
-	constant IMG_HEIGHT	: natural := 216; -- CHANGE WHEN IMAGE SIZE CHANGES
+	constant IMG_WIDTH	: natural := 10; -- CHANGE WHEN IMAGE SIZE CHANGES
+	constant IMG_HEIGHT	: natural := 10; -- CHANGE WHEN IMAGE SIZE CHANGES
 	constant MAG_WIDTH	: natural := 8;
 
 	constant FIFO_D_WIDTH	: natural := 8;
@@ -105,18 +105,19 @@ port
 end component hysteresis;
 
 component Canny_Edge_top is
-generic
-(
+generic (
     constant WIDTH   : integer:= IMG_WIDTH;
     constant HEIGHT  : integer:= IMG_HEIGHT
 );
-port
-(
+port (
 	signal clock     : in std_logic;
 	signal reset     : in std_logic;
 	signal in_full   : out std_logic;
 	signal in_wr_en  : in std_logic;
 	signal in_din    : in std_logic_vector (23 downto 0);
+  signal in_fifo_empty : out std_logic;
+  signal in_fifo_rd_en : out std_logic;
+	signal in_fifo_dout     : out std_logic_vector (23 downto 0);
 	signal out_rd_en : in std_logic;
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)

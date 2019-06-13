@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.hough_constants.all;
 
-entity hough_top is
+entity hough_top_ram is
   generic (
     constant WIDTH   : integer:= IMG_WIDTH;
     constant HEIGHT  : integer:= IMG_HEIGHT
@@ -14,19 +14,24 @@ entity hough_top is
     signal canny_out_empty  : in std_logic;
     signal in_din    : in std_logic_vector (7 downto 0);
     signal out_rd_en : in std_logic;
+    signal in_fifo_empty : in std_logic;
+  	signal in_fifo_rd_en : in std_logic;
+  	signal in_fifo_dout  : in std_logic_vector (23 downto 0);
     signal in_rd_en  : out std_logic;
     signal out_empty : out std_logic;
     signal out_dout  : out std_logic_vector (7 downto 0);
-    -- HDMI Interface
-    signal vsync	        : out std_logic; -- 0: output data not valid; 1: valid output
-    signal hsync	        : out std_logic; -- 0: output data not valid; 1: valid output
-    signal hdmi_de 	        : out std_logic; -- Data Enable
-    signal hdmi_dout        : out std_logic_vector (23 downto 0);
-    signal hdmi_clk         : out std_logic  -- Max clock freq 165Mhz
-  );
-end entity hough_top;
 
-architecture behavior of hough_top is
+    -- External RAM
+    signal ram_cs           : out std_logic;
+    signal ram_read_en      : out std_logic;
+    signal ram_wr_en        : out std_logic;
+    signal ram_addr         : out std_logic_vector(19 downto 0);
+    signal ram_wr_data      : out std_logic_vector(23 downto 0);
+    signal ram_rd_data      : in  std_logic_vector(23 downto 0)
+  );
+end entity hough_top_ram;
+
+architecture behavior of hough_top_ram is
 
   -- Dataflow:
   -- in_fifo --> accumulator --> accumulator_fifo --> threshold --> threshold_fifo -->
@@ -177,7 +182,7 @@ begin
     empty   => xy_out_empty
   );
 
-  drawlines_inst : draw_lines
+  drawlines_inst : draw_lines_ram
   port map (
     clock	              => clock,
     reset	              => reset,
@@ -188,19 +193,20 @@ begin
     xy_in_empty         => xy_out_empty,
     xy_done	            => xy_done,
     in_rd_en            => drawlines_rd_en,
-    in_empty            => canny_out_empty,
-    accumulator_rd_en   => accumulator_rd_en,   -- store/read original image
-    in_dout	            => in_din,
+    in_empty            => in_fifo_empty,  -- Original image, same input to Canny
+    accumulator_rd_en   => in_fifo_rd_en,  -- store/read original image
+    in_dout	            => in_fifo_dout,     -- Input data TO Canny [23:0]
     out_wr_en           => drawlines_wr_en,
     out_full            => drawlines_full,      -- input
     out_din	            => drawlines_dout_din,
 
-    -- HDMI Interface
-  	vsync         => vsync,
-  	hsync         => hsync,
-  	hdmi_de       => hdmi_de,
-  	hdmi_dout     => hdmi_dout,
-  	hdmi_clk      => hdmi_clk
+    -- External RAM
+    ram_cs      => ram_cs,
+    ram_oe      => ram_read_en,
+    ram_we      => ram_wr_en,
+    ram_addr    => ram_addr,
+    ram_wr_data => ram_wr_data,
+    ram_rd_data    => ram_rd_data
   );
 
   out_fifo_inst : component fifo

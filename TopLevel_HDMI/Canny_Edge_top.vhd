@@ -16,6 +16,9 @@ port
 	signal in_full   : out std_logic;
 	signal in_wr_en  : in std_logic;
 	signal in_din    : in std_logic_vector (23 downto 0);
+  signal in_fifo_empty : out std_logic;
+  signal in_fifo_rd_en : out std_logic;
+	signal in_fifo_dout     : out std_logic_vector (23 downto 0);
 	signal out_rd_en : in std_logic;
 	signal out_empty : out std_logic;
 	signal out_dout  : out std_logic_vector (7 downto 0)
@@ -76,6 +79,10 @@ architecture behavior of Canny_Edge_top is
 	signal hyst_wr_en  : std_logic;
 
 begin
+
+  in_fifo_empty   <= in_empty;
+  in_fifo_dout    <= in_dout;
+  in_fifo_rd_en   <= in_rd_en;
 
 	in_inst : component fifo
 	generic map

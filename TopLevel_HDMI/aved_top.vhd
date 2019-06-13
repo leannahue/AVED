@@ -32,23 +32,27 @@ architecture behavior of aved_top is
   signal hough_wr_en         : std_logic;
   signal hough_in_full       : std_logic;
 
+  signal in_fifo_empty     : std_logic;
+  signal in_fifo_rd_en     : std_logic;  -- Read enable from grayscale
+  signal in_fifo_dout      : std_logic_vector(23 downto 0);
+
 begin
 
   edge_detect_inst : component Canny_Edge_top
-  generic map (
-    WIDTH         => IMG_WIDTH,
-    HEIGHT        => IMG_HEIGHT
-  )
   port map (
     clock       => clock,
     reset       => reset,
     in_wr_en    => in_wr_en,          -- input
     in_din      => in_din,            -- input [23:0]
     out_rd_en   => canny_rd_en,       -- input
-    in_full     => in_full,           -- output
+    in_fifo_empty  => in_fifo_empty,  -- output
+    in_fifo_rd_en  => in_fifo_rd_en,  -- output
+    in_fifo_dout   => in_fifo_dout,
+    in_full     => in_full,
     out_empty   => canny_out_empty,   -- output
     out_dout    => canny_out_dout     -- output
   );
+
 
 
   Hough_top_inst : component hough_top
@@ -62,6 +66,9 @@ begin
     canny_out_empty  => canny_out_empty,
     in_din      => canny_out_dout,
     out_rd_en   => out_rd_en,       -- block input, goes to output FIFO
+    in_fifo_empty  => in_fifo_empty,  -- input
+    in_fifo_rd_en  => in_fifo_rd_en,  -- input
+    in_fifo_dout   => in_fifo_dout,
     in_rd_en    => canny_rd_en,   -- block outputs
     out_empty   => out_empty,
     out_dout    => out_dout,

@@ -90,7 +90,7 @@ begin
 				x_c <= 0;
 				y_c <= 0;
 				theta_c   <= 0;
-				accu_array_c <= (others =>(others => '0'));
+				accu_array_c <= (others => (others => '0'));
 				next_state <= s1;
 			when s1 =>
 				if ( in_empty = '0' ) then
@@ -160,7 +160,7 @@ begin
 			x <= 0;
 			y <= 0;
 			theta<= 0;
-			accu_array <= (others =>(others => '0'));
+			accu_array <= (others => (others => '0'));
 		elsif ( rising_edge(clock) ) then
 			state <= next_state after 1 ps;
 			x <= x_c after 1 ps;
