@@ -1,0 +1,880 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Leanna/Documents/EECS392/TopLevel/Tests
+Eaccumulator
+Z0 w1560354337
+Z1 DPx4 ieee 9 math_real 0 22 Sk6CSihbPL<f[^Shm]=KX0
+Z2 DPx4 work 15 hough_constants 0 22 caKzc>QE<d__MFjEL[6LF2
+Z3 DPx4 ieee 16 std_logic_textio 0 22 V5TSK`;aJKC<l]CEg1>mz1
+Z4 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z5 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z6 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z7 dC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests
+Z8 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd
+Z9 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd
+l0
+L9
+VAXgbXLoEeV>^8:VdH`Y_J0
+!s100 cBmaTOL<Y:LTlUZV6:0JB2
+Z10 OV;C;10.5b;63
+32
+Z11 !s110 1560449483
+!i10b 1
+Z12 !s108 1560449483.000000
+Z13 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd|
+Z14 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd|
+!i113 1
+Z15 o-work work -2002 -explicit
+Z16 tExplicit 1 CvgOpt 0
+Abehavior
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 11 accumulator 0 22 AXgbXLoEeV>^8:VdH`Y_J0
+l46
+L22
+VSnO1:IakE@2LPRk[Q]BQd3
+!s100 ZO^F^Oa>ZAX_dGlA=DG242
+R10
+32
+R11
+!i10b 1
+R12
+R13
+R14
+!i113 1
+R15
+R16
+Paved_constants
+R2
+Z17 DPx4 work 15 canny_constants 0 22 NPP7?0E4I9<jfiZmJCSJj3
+R3
+R4
+R5
+R6
+w1560449458
+R7
+8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_constants.vhd
+FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_constants.vhd
+l0
+L9
+Vi]QXlSOYo`9>e@K:KSKh]3
+!s100 U5kEM<KUP8a?L4W1KaHnL2
+R10
+32
+R11
+!i10b 1
+R12
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_constants.vhd|
+!s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_constants.vhd|
+!i113 1
+R15
+R16
+Eaved_top_ram
+Z18 w1560445576
+R2
+R17
+R3
+Z19 DPx4 work 14 aved_constants 0 22 i]QXlSOYo`9>e@K:KSKh]3
+R4
+R5
+R6
+R7
+Z20 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_top_ram.vhd
+Z21 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_top_ram.vhd
+l0
+L6
+V1HnMb=V0oDGWO;6>[n^PM2
+!s100 R52fM]L_E4Uz2Q2??M>FK0
+R10
+32
+Z22 !s110 1560449484
+!i10b 1
+R12
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_top_ram.vhd|
+Z24 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_top_ram.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R2
+R17
+R3
+R19
+R4
+R5
+R6
+DEx4 work 12 aved_top_ram 0 22 1HnMb=V0oDGWO;6>[n^PM2
+l39
+L27
+V_cz`DfcTKa<nOoBRWbP8G1
+!s100 5;=WPiF9Vc3h7LlMjmW6Y2
+R10
+32
+R22
+!i10b 1
+R12
+R23
+R24
+!i113 1
+R15
+R16
+Eaved_top_ram_tb
+Z25 w1560449476
+R2
+R17
+R19
+R3
+R4
+R5
+R6
+R7
+Z26 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd
+Z27 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd
+l0
+L8
+V1nJIj_KzEQFHMh`mTBh0g1
+!s100 ?2Hgc<U?RFiGU:1AjQl5k3
+R10
+32
+Z28 !s110 1560449486
+!i10b 1
+Z29 !s108 1560449486.000000
+Z30 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd|
+Z31 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R2
+R17
+R19
+R3
+R4
+R5
+R6
+DEx4 work 15 aved_top_ram_tb 0 22 1nJIj_KzEQFHMh`mTBh0g1
+l61
+L19
+V]?1Qz?USm>KFkMiB25W221
+!s100 Pl9V4iZ:=YV5XOHo[2fY`2
+R10
+32
+R28
+!i10b 1
+R29
+R30
+R31
+!i113 1
+R15
+R16
+Pcanny_constants
+R3
+R4
+R5
+R6
+w1560448522
+R7
+8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/canny_constants.vhd
+FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/canny_constants.vhd
+l0
+L7
+VNPP7?0E4I9<jfiZmJCSJj3
+!s100 P7dLYOf3TdO?W@R@<DN7L3
+R10
+32
+!s110 1560449482
+!i10b 1
+!s108 1560449482.000000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/canny_constants.vhd|
+!s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/canny_constants.vhd|
+!i113 1
+R15
+R16
+Ecanny_edge_top_ram
+Z32 w1560448657
+R3
+R17
+R4
+R5
+R6
+R7
+Z33 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Canny_Edge_top_ram.vhd
+Z34 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Canny_Edge_top_ram.vhd
+l0
+L6
+VPJY93NdRn80FO4=eXAAiL0
+!s100 W3=FPAkH1d9[1YPgAbDeg1
+R10
+32
+R28
+!i10b 1
+R29
+Z35 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Canny_Edge_top_ram.vhd|
+Z36 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Canny_Edge_top_ram.vhd|
+!i113 1
+R15
+R16
+Abehavior
+Z37 DEx4 work 9 grayscale 0 22 1d@H_UT1O@SlJOnaLgVl;0
+R3
+R17
+R4
+R5
+R6
+Z38 DEx4 work 18 canny_edge_top_ram 0 22 PJY93NdRn80FO4=eXAAiL0
+l79
+L27
+Z39 VzzUHa>l;7PEafS`XkeaRm1
+Z40 !s100 [IchB9dd0R4l6Lk0TTnTn0
+R10
+32
+R28
+!i10b 1
+R29
+R35
+R36
+!i113 1
+R15
+R16
+Ecos_table
+Z41 w1559884800
+R3
+R2
+R4
+R5
+R6
+R7
+Z42 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd
+Z43 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd
+l0
+L6
+VV[V4O;C]AWiLWkh1PSzR83
+!s100 XMJfTo4?2BZlbWa9m1gW]2
+R10
+32
+R22
+!i10b 1
+Z44 !s108 1560449484.000000
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd|
+Z46 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 cos_table 0 22 V[V4O;C]AWiLWkh1PSzR83
+l17
+L13
+VRI4Aj5CK6dIez`hcD<aE^3
+!s100 bRHYhdE>OM3i_z4;E@h9Y0
+R10
+32
+R22
+!i10b 1
+R44
+R45
+R46
+!i113 1
+R15
+R16
+Edraw_lines_ram
+Z47 w1560444942
+R3
+R2
+R4
+R5
+R6
+R7
+Z48 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd
+Z49 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd
+l0
+L8
+VmLKNc@a>VN^eOJ;>W6n340
+!s100 988gb^D5H[]Y:g>_>VNJg1
+R10
+32
+R22
+!i10b 1
+R44
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd|
+Z51 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 14 draw_lines_ram 0 22 mLKNc@a>VN^eOJ;>W6n340
+l95
+L36
+V6RblQzYPb[B3z6Do=5hNK0
+!s100 0[?n8Ra@_9AcK1W=OB2n60
+R10
+32
+R22
+!i10b 1
+R44
+R50
+R51
+!i113 1
+R15
+R16
+Efifo
+Z52 w1560290221
+R3
+R4
+R5
+R6
+R7
+Z53 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/fifo.vhd
+Z54 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/fifo.vhd
+l0
+L200
+V^M@`9DB0IXXP:9ogaGchV2
+!s100 hc>[OnN_dboVL03U5GbKg1
+R10
+32
+R22
+!i10b 1
+R44
+Z55 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/fifo.vhd|
+Z56 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/fifo.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R4
+R5
+R6
+DEx4 work 4 fifo 0 22 ^M@`9DB0IXXP:9ogaGchV2
+l310
+L221
+VaMFH=k65]]cj;I>1Q@^Ai3
+!s100 =;oJ`XhE23fY3A]blOXUX3
+R10
+32
+R22
+!i10b 1
+R44
+R55
+R56
+!i113 1
+R15
+R16
+Efinite_lines
+Z57 w1559964999
+R1
+R2
+R3
+R4
+R5
+R6
+R7
+Z58 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd
+Z59 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd
+l0
+L9
+V^homj:FQkT0fPn9::0Lha1
+!s100 A:Q@o>TG^]TA>UN?l?g^j3
+R10
+32
+R22
+!i10b 1
+R44
+Z60 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd|
+Z61 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R1
+R2
+R3
+R4
+R5
+R6
+DEx4 work 12 finite_lines 0 22 ^homj:FQkT0fPn9::0Lha1
+l92
+L28
+VhjE@S@cTV`YP?g60`:JiJ0
+!s100 3_WYFi]1OoN<[QSzzC`2;0
+R10
+32
+R22
+!i10b 1
+R44
+R60
+R61
+!i113 1
+R15
+R16
+Egaussian
+Z62 w1560304609
+R17
+R3
+R4
+R5
+R6
+R7
+Z63 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/gaussian.vhd
+Z64 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/gaussian.vhd
+l0
+L8
+VM<?jOSE<K]QTA>l97b_8<1
+!s100 ^k6NaeKdijFJ_gTABBQkH1
+R10
+32
+Z65 !s110 1560449485
+!i10b 1
+R44
+Z66 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/gaussian.vhd|
+Z67 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/gaussian.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R17
+R3
+R4
+R5
+R6
+DEx4 work 8 gaussian 0 22 M<?jOSE<K]QTA>l97b_8<1
+l83
+L22
+VZBOHMFDTo7^LBUIS21=3J1
+!s100 ZN2h7476a1l==VQObP7XW3
+R10
+32
+R65
+!i10b 1
+R44
+R66
+R67
+!i113 1
+R15
+R16
+Egrayscale
+Z68 w1560283983
+R17
+R3
+R4
+R5
+R6
+R7
+Z69 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd
+Z70 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd
+l0
+L8
+V1d@H_UT1O@SlJOnaLgVl;0
+!s100 n4m@7V:gh^f>[zVWcNC8@2
+R10
+32
+R65
+!i10b 1
+Z71 !s108 1560449485.000000
+Z72 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd|
+Z73 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd|
+!i113 1
+R15
+R16
+Acombinational
+R17
+R3
+R4
+R5
+R6
+R37
+l76
+L75
+VL3Z2YWJdP:aen4mlfGzMb2
+!s100 Cn;m7cEei3T:[:N`NVL4i0
+R10
+32
+R65
+!i10b 1
+R71
+R72
+R73
+!i113 1
+R15
+R16
+Abehavior
+R17
+R3
+R4
+R5
+R6
+R37
+l28
+L22
+V:Q=KT^F4YUO8GjX4IHH<S2
+!s100 lNM3bbDJ9EJ3<DCZ^bCDn3
+R10
+32
+R65
+!i10b 1
+R71
+R72
+R73
+!i113 1
+R15
+R16
+Phough_constants
+R3
+R4
+R5
+R6
+w1560448462
+R7
+8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_constants.vhd
+FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_constants.vhd
+l0
+L7
+VcaKzc>QE<d__MFjEL[6LF2
+!s100 `KfGF6[mPHS7]91SnG_6X3
+R10
+32
+R11
+!i10b 1
+R12
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_constants.vhd|
+!s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_constants.vhd|
+!i113 1
+R15
+R16
+Ehough_top_ram
+Z74 w1560448404
+R3
+R2
+R4
+R5
+R6
+R7
+Z75 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_top_ram.vhd
+Z76 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_top_ram.vhd
+l0
+L6
+VE5O[`YC2LGNGJQQ50Kf:52
+!s100 zKk[?ZlULUjj4IBj2k`1O3
+R10
+32
+R65
+!i10b 1
+R71
+Z77 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_top_ram.vhd|
+Z78 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_top_ram.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R2
+R4
+R5
+R6
+DEx4 work 13 hough_top_ram 0 22 E5O[`YC2LGNGJQQ50Kf:52
+l80
+L34
+V`lehe]3h_HKeD_fBo`0aY1
+!s100 0O15aok:^C=Q7LDik@^eC1
+R10
+32
+R65
+!i10b 1
+R71
+R77
+R78
+!i113 1
+R15
+R16
+Ehysteresis
+Z79 w1560287393
+R3
+R17
+R4
+R5
+R6
+R7
+Z80 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hysteresis.vhd
+Z81 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hysteresis.vhd
+l0
+L6
+VLH^Zef8BRzifb;KZkocO50
+!s100 <1M]kRbaj1jEBN4P:QP<E2
+R10
+32
+R65
+!i10b 1
+R71
+Z82 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hysteresis.vhd|
+Z83 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hysteresis.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R17
+R4
+R5
+R6
+DEx4 work 10 hysteresis 0 22 LH^Zef8BRzifb;KZkocO50
+l90
+L20
+V>gJ?WU92XB_>[SU1YJIRz0
+!s100 7bL08ZY<;eKZ4mHh0eeeN3
+R10
+32
+R65
+!i10b 1
+R71
+R82
+R83
+!i113 1
+R15
+R16
+Enon_maximum_suppression
+Z84 w1560283997
+R3
+R17
+R4
+R5
+R6
+R7
+Z85 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd
+Z86 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd
+l0
+L6
+VnP4=k]Sec`_GmG[1Ca5kH3
+!s100 [QiT_kMWRM?`6Lc3=_0FC1
+R10
+32
+R65
+!i10b 1
+R71
+Z87 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd|
+Z88 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R17
+R4
+R5
+R6
+DEx4 work 23 non_maximum_suppression 0 22 nP4=k]Sec`_GmG[1Ca5kH3
+l99
+L19
+V22S:3Ueka1[kYl52^Y4c80
+!s100 oljVc;5JYCQTjhRe@0eK;0
+R10
+32
+R65
+!i10b 1
+R71
+R87
+R88
+!i113 1
+R15
+R16
+Esin_table
+Z89 w1559884939
+R3
+R2
+R4
+R5
+R6
+R7
+Z90 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd
+Z91 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd
+l0
+L6
+V^KRmazNGDc>0<QN8j>?890
+!s100 9^XFF]EOkIPLHn;1A>MN01
+R10
+32
+R65
+!i10b 1
+R71
+Z92 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd|
+Z93 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 sin_table 0 22 ^KRmazNGDc>0<QN8j>?890
+l17
+L13
+Vf;ACM_M1aFLRENn;;E0DA0
+!s100 4PihAnldlKn503hbOG=4E1
+R10
+32
+R65
+!i10b 1
+R71
+R92
+R93
+!i113 1
+R15
+R16
+Esobel
+Z94 w1560286511
+R3
+R17
+R4
+R5
+R6
+R7
+Z95 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd
+Z96 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd
+l0
+L6
+VXE2zcRM;eM5U??Uga462Z0
+!s100 ;Z8a_OXY<`f1U[SGa5>nh3
+R10
+32
+R28
+!i10b 1
+R29
+Z97 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd|
+Z98 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd|
+!i113 1
+R15
+R16
+Abehavior
+R3
+R17
+R4
+R5
+R6
+DEx4 work 5 sobel 0 22 XE2zcRM;eM5U??Uga462Z0
+l80
+L20
+VLNHoJi93Fhz]ASHgYOiab1
+!s100 3zUQgd5j_nAYR]Yj5HNLV0
+R10
+32
+R28
+!i10b 1
+R29
+R97
+R98
+!i113 1
+R15
+R16
+Esram1024kx24
+Z99 w1560443870
+R4
+R3
+Z100 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z101 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+R5
+R6
+R7
+Z102 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd
+Z103 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd
+l0
+L12
+V6XUalU9zBoh9g<O3hBEW]3
+!s100 <Xg0lgM^ZiPfDj3A[H@@=1
+R10
+32
+R28
+!i10b 1
+R29
+Z104 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd|
+Z105 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R4
+R3
+R100
+R101
+R5
+R6
+DEx4 work 12 sram1024kx24 0 22 6XUalU9zBoh9g<O3hBEW]3
+l32
+L27
+V=`moTlYfKRg5LnA]ai]m70
+!s100 oidkJnDVEHe2>=ig0dgT]3
+R10
+32
+R28
+!i10b 1
+R29
+R104
+R105
+!i113 1
+R15
+R16
+Ethreshold
+Z106 w1559965680
+R3
+R2
+R4
+R5
+R6
+R7
+Z107 8C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/threshold.vhd
+Z108 FC:/Users/Leanna/Documents/EECS392/TopLevel_RAM/threshold.vhd
+l0
+L8
+V=Dc]kI6_W?d2>jjUIV^FI3
+!s100 n]<kOW7Nlo3g6AZN1agmB3
+R10
+32
+R11
+!i10b 1
+R12
+Z109 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/threshold.vhd|
+Z110 !s107 C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/threshold.vhd|
+!i113 1
+R15
+R16
+Abehavioral
+R3
+R2
+R4
+R5
+R6
+DEx4 work 9 threshold 0 22 =Dc]kI6_W?d2>jjUIV^FI3
+l192
+L23
+VM9[[L9Ai3[z>680Tja9lk0
+!s100 =k=0a92XmHE]UD:G4gz842
+R10
+32
+R11
+!i10b 1
+R12
+R109
+R110
+!i113 1
+R15
+R16

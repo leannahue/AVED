@@ -1,0 +1,161 @@
+C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity draw_lines_ram
+-- Compiling architecture behavioral of draw_lines_ram
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Loading package MATH_REAL
+-- Compiling entity accumulator
+-- Compiling architecture behavior of accumulator
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity sin_table
+-- Compiling architecture behavioral of sin_table
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity grayscale
+-- Compiling architecture behavior of grayscale
+-- Compiling architecture combinational of grayscale
+-- Loading entity grayscale
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/gaussian.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/gaussian.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity gaussian
+-- Compiling architecture behavior of gaussian
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Loading package aved_constants
+-- Compiling entity aved_top_ram_tb
+-- Compiling architecture behavior of aved_top_ram_tb
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Loading package MATH_REAL
+-- Compiling entity finite_lines
+-- Compiling architecture behavior of finite_lines
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity non_maximum_suppression
+-- Compiling architecture behavioral of non_maximum_suppression
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package std_logic_textio
+-- Loading package NUMERIC_STD
+-- Compiling entity sram1024kx24
+-- Compiling architecture behavioral of sram1024kx24
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hysteresis.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hysteresis.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity hysteresis
+-- Compiling architecture behavior of hysteresis
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity cos_table
+-- Compiling architecture behavioral of cos_table
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/fifo.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/fifo.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity fifo
+-- Compiling architecture behavior of fifo
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity sobel
+-- Compiling architecture behavior of sobel
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/threshold.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/threshold.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity threshold
+-- Compiling architecture behavioral of threshold
+
+} {} {}}
