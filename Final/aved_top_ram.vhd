@@ -3,7 +3,7 @@ use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 use work.aved_constants.all;
 
-entity aved_top_ram is
+entity aved_top is
   port (
   signal clock     : in std_logic;
   signal reset     : in std_logic;
@@ -21,10 +21,10 @@ entity aved_top_ram is
   signal ram_wr_data      : out std_logic_vector(23 downto 0);
   signal ram_rd_data      : in  std_logic_vector(23 downto 0)
   );
-end entity aved_top_ram;
+end entity aved_top;
 
 
-architecture behavior of aved_top_ram is
+architecture behavior of aved_top is
 
   signal canny_rd_en         : std_logic;
   signal canny_out_dout      : std_logic_vector(7 downto 0);

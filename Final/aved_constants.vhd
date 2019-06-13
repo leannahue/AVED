@@ -12,7 +12,7 @@ package aved_constants is
   constant IMG_HEIGHT     : natural := 10;
   constant IMG_SIZE       : natural := IMG_WIDTH*IMG_HEIGHT;
 
-  component aved_top_ram is
+  component aved_top is
     port (
       signal clock     : in std_logic;
       signal reset     : in std_logic;
@@ -31,7 +31,7 @@ package aved_constants is
       signal ram_wr_data      : out std_logic_vector(23 downto 0);
       signal ram_rd_data      : in  std_logic_vector(23 downto 0)
     );
-  end component aved_top_ram;
+  end component aved_top;
 
   component Canny_Edge_top is
   generic

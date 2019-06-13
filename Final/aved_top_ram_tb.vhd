@@ -75,7 +75,7 @@ begin
   );
 
 
-  aved_top_ram_inst : component aved_top_ram
+  aved_top_inst : component aved_top
   port map
   (
     clock       => clock,
