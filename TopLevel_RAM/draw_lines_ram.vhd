@@ -96,15 +96,9 @@ begin
 
 	xy_data_in   <= y2 & y1 & x2 & x1;
 
-	--   drawline_data <=  "11111100" when (drawline_en = '1') else "00000000";
-	--   ram_wr_data   <= in_dout when (img_write_en = '1') else drawline_data;  --line_pixel_value=252 (white line)
-	--   ram_wr_en     <= img_write_en or draw_pixel;  -- To line up with starting write address, not '0' same as c code
-	--   out_din       <= ram_wr_data;
-	--   out_wr_en     <= ram_wr_en;
-
 	-- Added for storing data to RAM
-	ram_wr_data   <= in_dout when (img_write_en = '1') else x"0000FF"; --line_pixel_value=RGB (red)
-	ram_wr_en     <= img_write_en or drawline_wr_en;  -- To line up with starting write address, not '0' same as c code
+	ram_wr_data   <= in_dout when (img_write_en = '1') else x"0000FF"; -- pixel value for line
+	ram_wr_en     <= img_write_en or drawline_wr_en;
 	ram_cs        <= ram_wr_en or img_read_en;
 	ram_addr_int  <= img_write_addr when (ram_wr_en = '1') else img_read_addr;
 	ram_addr      <= std_logic_vector(to_unsigned(ram_addr_int,20));
@@ -112,12 +106,12 @@ begin
 	-- Not used for external RAM
 	out_din       <= x"00";
 	out_wr_en     <= '0';
+
 	-- External RAM
 	ram_oe        <= img_read_en;
 	ram_we        <= ram_wr_en;
 
-
-	-- SLOPE signals
+	-- Slope signals
 	start_x    <= to_integer(unsigned(x1_lat));
 	end_x      <= to_integer(unsigned(x2_lat));
 	start_y    <= to_integer(unsigned(y1_lat));
@@ -141,7 +135,6 @@ begin
 
 			when STORE_IMAGE =>           -- output original hystersis output
 				if (in_empty = '0') and (out_full = '0' and accumulator_rd_en = '1') then
-					--                 in_rd_en           <= '1';     -- For XY lines only
 					img_write_addr_nxt <= img_write_addr + 1;
 					img_write_en       <= '1';
 				end if;
@@ -168,12 +161,14 @@ begin
 						draw_next_state <= WAIT_XY;
 					end if;
 				end if;
+
 			when READ_IMAGE =>
 				img_read_en       <= '1';
 				img_read_addr_nxt <= img_read_addr + 1;
 				if (img_read_addr = IMG_SIZE-1) then
 					draw_next_state <= IDLE;
 				end if;
+
 			when others =>
 				draw_next_state <= IDLE;
 		end case;

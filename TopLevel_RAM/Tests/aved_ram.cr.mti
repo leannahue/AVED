@@ -1,4 +1,4 @@
-C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/draw_lines_ram.vhd
+C:/Users/Leanna/Documents/EECS392/AVED/Final/draw_lines_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/draw_lines_ram.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -8,6 +8,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package hough_constants
 -- Compiling entity draw_lines_ram
 -- Compiling architecture behavioral of draw_lines_ram
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_constants.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling package hough_constants
 
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/accumulator.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -21,6 +30,17 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity accumulator
 -- Compiling architecture behavior of accumulator
 
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/non_maximum_suppression.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/non_maximum_suppression.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity non_maximum_suppression
+-- Compiling architecture behavioral of non_maximum_suppression
+
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sin_table.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -31,6 +51,39 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package hough_constants
 -- Compiling entity sin_table
 -- Compiling architecture behavioral of sin_table
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/gaussian.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/gaussian.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity gaussian
+-- Compiling architecture behavior of gaussian
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_constants.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Compiling package aved_constants
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/cos_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/cos_table.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity cos_table
+-- Compiling architecture behavioral of cos_table
 
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/grayscale.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -56,6 +109,144 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity gaussian
 -- Compiling architecture behavior of gaussian
 
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/threshold.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/threshold.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity threshold
+-- Compiling architecture behavioral of threshold
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/sobel.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/sobel.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity sobel
+-- Compiling architecture behavior of sobel
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_top_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/hough_top_ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity hough_top_ram
+-- Compiling architecture behavior of hough_top_ram
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_constants.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Compiling package aved_constants
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/canny_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/canny_constants.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling package canny_constants
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/hough_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/hough_constants.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling package hough_constants
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/Canny_Edge_top.VHD {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/Canny_Edge_top.VHD
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity Canny_Edge_top
+-- Compiling architecture behavior of Canny_Edge_top
+** Error: (vcom-13) Recompile work.grayscale because work.canny_constants has changed.
+** Error (suppressible): C:/Users/Leanna/Documents/EECS392/AVED/Final/Canny_Edge_top.VHD(30): (vcom-1195) Cannot find expanded name "work.grayscale".
+** Error: C:/Users/Leanna/Documents/EECS392/AVED/Final/Canny_Edge_top.VHD(30): (vcom-1105) Name (indexed name) does not denote an entity name.
+** Error: C:/Users/Leanna/Documents/EECS392/AVED/Final/Canny_Edge_top.VHD(30): Unknown expanded name.
+** Error: C:/Users/Leanna/Documents/EECS392/AVED/Final/Canny_Edge_top.VHD(264): VHDL Compiler exiting
+
+} {11.0 12.0 13.0 16.0} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/accumulator.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/accumulator.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Loading package MATH_REAL
+-- Compiling entity accumulator
+-- Compiling architecture behavior of accumulator
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Canny_Edge_top.VHD {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Canny_Edge_top.VHD
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity Canny_Edge_top
+-- Compiling architecture behavior of Canny_Edge_top
+-- Loading entity grayscale
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/sin_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/sin_table.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity sin_table
+-- Compiling architecture behavioral of sin_table
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/finite_lines.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/finite_lines.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Loading package MATH_REAL
+-- Compiling entity finite_lines
+-- Compiling architecture behavior of finite_lines
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_top_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_top_ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Loading package aved_constants
+-- Compiling entity aved_top
+-- Compiling architecture behavior of aved_top
+
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/Tests/aved_top_ram_tb.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -69,6 +260,19 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity aved_top_ram_tb
 -- Compiling architecture behavior of aved_top_ram_tb
 
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_top_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/aved_top_ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Loading package aved_constants
+-- Compiling entity aved_top_ram
+-- Compiling architecture behavior of aved_top_ram
+
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/finite_lines.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -81,6 +285,42 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity finite_lines
 -- Compiling architecture behavior of finite_lines
 
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/sram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/sram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package std_logic_textio
+-- Loading package NUMERIC_STD
+-- Compiling entity sram
+-- Compiling architecture behavioral of sram
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/hysteresis.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/hysteresis.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity hysteresis
+-- Compiling architecture behavior of hysteresis
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/grayscale.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/grayscale.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Compiling entity grayscale
+-- Compiling architecture behavior of grayscale
+-- Compiling architecture combinational of grayscale
+-- Loading entity grayscale
+
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/non_maximum_suppression.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -91,6 +331,39 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Loading package canny_constants
 -- Compiling entity non_maximum_suppression
 -- Compiling architecture behavioral of non_maximum_suppression
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/hough_top_ram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/hough_top_ram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package hough_constants
+-- Compiling entity hough_top_ram
+-- Compiling architecture behavior of hough_top_ram
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/fifo.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/fifo.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling entity fifo
+-- Compiling architecture behavior of fifo
+
+} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_UNSIGNED
+-- Loading package std_logic_textio
+-- Loading package NUMERIC_STD
+-- Compiling entity sram
+-- Compiling architecture behavioral of sram
 
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sram1024kx24.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
@@ -115,6 +388,15 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity hysteresis
 -- Compiling architecture behavior of hysteresis
 
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/canny_constants.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/canny_constants.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Compiling package canny_constants
+
 } {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/cos_table.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
@@ -136,7 +418,22 @@ Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  
 -- Compiling entity fifo
 -- Compiling architecture behavior of fifo
 
-} {} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd
+} {} {}} C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_top_ram_tb.vhd {0 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_top_ram_tb.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_textio
+-- Loading package canny_constants
+-- Loading package hough_constants
+-- Loading package aved_constants
+-- Compiling entity aved_top_ram_tb
+-- Compiling architecture behavior of aved_top_ram_tb
+** Error (suppressible): C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_top_ram_tb.vhd(78): (vcom-1141) Identifier "aved_top" does not identify a component declaration.
+** Error: C:/Users/Leanna/Documents/EECS392/AVED/Final/aved_top_ram_tb.vhd(327): VHDL Compiler exiting
+
+} {14.0 15.0} {}} C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Leanna/Documents/EECS392/TopLevel_RAM/sobel.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
 -- Loading package STANDARD
 -- Loading package TEXTIO
